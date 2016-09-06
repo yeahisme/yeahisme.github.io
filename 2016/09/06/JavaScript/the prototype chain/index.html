@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>the prototype chain 原型链 | 闪阳的web之旅</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="用文字和图片分享下对原型链的理解
+1234567891011121314151617181920212223242526//Object.prototype  //存在于prototype的属性被所有子代共享Object.prototype.salutation = &quot;Hello world!&quot;;function ObjA(name)&amp;#123;    this.name = name;&amp;#125">
+<meta property="og:type" content="article">
+<meta property="og:title" content="the prototype chain 原型链">
+<meta property="og:url" content="http://yoursite.com/2016/09/06/JavaScript/the prototype chain/index.html">
+<meta property="og:site_name" content="闪阳的web之旅">
+<meta property="og:description" content="用文字和图片分享下对原型链的理解
+1234567891011121314151617181920212223242526//Object.prototype  //存在于prototype的属性被所有子代共享Object.prototype.salutation = &quot;Hello world!&quot;;function ObjA(name)&amp;#123;    this.name = name;&amp;#125">
+<meta property="og:image" content="http://yoursite.com/images/js/the prototype chain1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/js/the prototype chain2.png">
+<meta property="og:updated_time" content="2016-08-22T12:56:14.269Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="the prototype chain 原型链">
+<meta name="twitter:description" content="用文字和图片分享下对原型链的理解
+1234567891011121314151617181920212223242526//Object.prototype  //存在于prototype的属性被所有子代共享Object.prototype.salutation = &quot;Hello world!&quot;;function ObjA(name)&amp;#123;    this.name = name;&amp;#125">
+<meta name="twitter:image" content="http://yoursite.com/images/js/the prototype chain1.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="闪阳的web之旅" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">闪阳的web之旅</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">分享是快乐的</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JavaScript/the prototype chain" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/06/JavaScript/the prototype chain/" class="article-date">
+  <time datetime="2016-09-06T10:36:03.758Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      the prototype chain 原型链
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="用文字和图片分享下对原型链的理解"><a href="#用文字和图片分享下对原型链的理解" class="headerlink" title="用文字和图片分享下对原型链的理解"></a>用文字和图片分享下对原型链的理解</h2><p><img src="/images/js/the prototype chain1.jpg" alt="联想到轨道与车厢"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Object.prototype  //存在于prototype的属性被所有子代共享</span></div><div class="line"><span class="built_in">Object</span>.prototype.salutation = <span class="string">"Hello world!"</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ObjA</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line"><span class="comment">//prototype chain</span></div><div class="line">ObjA.prototype.say=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//存在于prototype的方法被所有子代共享</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line"></div><div class="line">objA1 = <span class="keyword">new</span> ObjA(<span class="string">"ObjA1"</span>);</div><div class="line"><span class="comment">//output: ObjA1</span></div><div class="line">objA1.say();</div><div class="line"><span class="comment">//output: Hello world!</span></div><div class="line"><span class="built_in">console</span>.log(objA1.salutation);</div><div class="line"></div><div class="line">objA2 = <span class="keyword">new</span> ObjA(<span class="string">"ObjA2"</span>);</div><div class="line">objA2.say = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"My name is"</span>,<span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line"><span class="comment">//output: My name is ObjA2</span></div><div class="line">objA2.say();</div><div class="line"><span class="comment">//output: Hello world!</span></div><div class="line"><span class="built_in">console</span>.log(objA2.salutation);</div></pre></td></tr></table></figure>
+<p><img src="/images/js/the prototype chain2.png" alt="代码图示"></p>
+<p>objA1 = new ObjA(”objA1”)<br>此步骤会把ObjA的属性和方法(此例即this.name=”objA1”)复制到新的内存地址中<br>当调用objA1.say();首先会在objA1对象内查找say()方法<br>查到则执行查不到通过<strong>[[prototype]]</strong>(也就是__proto__)<br>继续查到，重复这个循环直到<strong>[[prototype]]</strong>指向<strong>Object.prototype</strong></p>
+<blockquote>
+<p>Following the ECMAScript standard, the notation someObject.[[Prototype]] is used to designate the prototype of someObject. This is equivalent to the JavaScript property __proto__ (now deprecated)</p>
+</blockquote>
+<p>原型编程的基本规则</p>
+<ul>
+<li>所有的数据都是对象。</li>
+<li>要得到一个对象，不是通过实例化类，而是找到一个对象作为原型并克隆它。</li>
+<li>对象会记住它的原型。</li>
+<li>如果对象无法响应某个请求，它会把这个请求委托给它自己的原型。</li>
+</ul>
+<p>Related links: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain" target="_blank" rel="external">Inheritance and the prototype chain</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/06/JavaScript/the prototype chain/" data-id="cisrcjj33001acoqk35wjj6wn" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/prototype/">prototype</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/09/06/JavaScript/throttle/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          函数节流
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/06/JavaScript/The best Sticky Footer/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">The best Sticky Footer</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Closures/">Closures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Object-create/">Object.create</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apply/">apply()</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bind/">bind()</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call/">call()</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/clone/">clone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/concept/">concept</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/config/">config</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/currying/">currying</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/library/">library</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onresize/">onresize</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/polymorphism/">polymorphism</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/position/">position</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setTimeout/">setTimeout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uncurrying/">uncurrying</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Closures/" style="font-size: 15px;">Closures</a> <a href="/tags/JSON/" style="font-size: 20px;">JSON</a> <a href="/tags/Object-create/" style="font-size: 10px;">Object.create</a> <a href="/tags/apply/" style="font-size: 10px;">apply()</a> <a href="/tags/bind/" style="font-size: 10px;">bind()</a> <a href="/tags/call/" style="font-size: 10px;">call()</a> <a href="/tags/clone/" style="font-size: 10px;">clone</a> <a href="/tags/concept/" style="font-size: 10px;">concept</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/currying/" style="font-size: 10px;">currying</a> <a href="/tags/library/" style="font-size: 10px;">library</a> <a href="/tags/onresize/" style="font-size: 10px;">onresize</a> <a href="/tags/polymorphism/" style="font-size: 10px;">polymorphism</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/setTimeout/" style="font-size: 10px;">setTimeout</a> <a href="/tags/uncurrying/" style="font-size: 10px;">uncurrying</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/09/06/JSON/JSON tools/">格式化和验证JSON的工具</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/06/JSON/JSON in Visual drag and drop/">可视化数据中的JSON数据交换</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/06/JSON/JSON in PHP/">PHP中的JSON</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/06/JSON/JSON in Node.js/">Node.js中的JSON</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/06/JSON/configuration/">作为配置文件的JSON</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 shanyang<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/1.11.0/jquery.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
