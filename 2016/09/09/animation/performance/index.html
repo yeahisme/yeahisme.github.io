@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>动画性能 | 闪阳的web之旅</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="网页:有点颠簸怎么办？
+1.避免布局颠簸的方法很简单，那就是把DOM的设置和获取的操作分别集合在一起1234567891011// 糟糕的做法var currentTop = $(&quot;element&quot;).css(&quot;top&quot;); // 获取$(&quot;element&quot;).style.top = currentTop + 1; // 设置var currentLeft = $(&quot;element&quot;).css(&quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="动画性能">
+<meta property="og:url" content="http://yoursite.com/2016/09/09/animation/performance/index.html">
+<meta property="og:site_name" content="闪阳的web之旅">
+<meta property="og:description" content="网页:有点颠簸怎么办？
+1.避免布局颠簸的方法很简单，那就是把DOM的设置和获取的操作分别集合在一起1234567891011// 糟糕的做法var currentTop = $(&quot;element&quot;).css(&quot;top&quot;); // 获取$(&quot;element&quot;).style.top = currentTop + 1; // 设置var currentLeft = $(&quot;element&quot;).css(&quot;">
+<meta property="og:updated_time" content="2016-09-09T07:01:30.347Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="动画性能">
+<meta name="twitter:description" content="网页:有点颠簸怎么办？
+1.避免布局颠簸的方法很简单，那就是把DOM的设置和获取的操作分别集合在一起1234567891011// 糟糕的做法var currentTop = $(&quot;element&quot;).css(&quot;top&quot;); // 获取$(&quot;element&quot;).style.top = currentTop + 1; // 设置var currentLeft = $(&quot;element&quot;).css(&quot;">
+  
+    <link rel="alternate" href="/atom.xml" title="闪阳的web之旅" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">闪阳的web之旅</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">科技并不仅限于计算机，任何可以使事情更易完成的方法都是科技。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-animation/performance" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/09/animation/performance/" class="article-date">
+  <time datetime="2016-09-09T07:01:30.346Z" itemprop="datePublished">2016-09-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/animation/">animation</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      动画性能
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>网页:有点颠簸怎么办？</p>
+<h4 id="1-避免布局颠簸的方法很简单，那就是把DOM的设置和获取的操作分别集合在一起"><a href="#1-避免布局颠簸的方法很简单，那就是把DOM的设置和获取的操作分别集合在一起" class="headerlink" title="1.避免布局颠簸的方法很简单，那就是把DOM的设置和获取的操作分别集合在一起"></a>1.避免布局颠簸的方法很简单，那就是把DOM的设置和获取的操作分别集合在一起</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 糟糕的做法</span></div><div class="line"><span class="keyword">var</span> currentTop = $(<span class="string">"element"</span>).css(<span class="string">"top"</span>); <span class="comment">// 获取</span></div><div class="line">$(<span class="string">"element"</span>).style.top = currentTop + <span class="number">1</span>; <span class="comment">// 设置</span></div><div class="line"><span class="keyword">var</span> currentLeft = $(<span class="string">"element"</span>).css(<span class="string">"left"</span>); <span class="comment">// 获取</span></div><div class="line">$(<span class="string">"element"</span>).style.left = currentLeft + <span class="number">1</span>; <span class="comment">// 设置</span></div><div class="line"></div><div class="line"><span class="comment">//正确的做法</span></div><div class="line"><span class="keyword">var</span> currentTop = $(<span class="string">"element"</span>).css(<span class="string">"top"</span>); <span class="comment">// 获取</span></div><div class="line"><span class="keyword">var</span> currentLeft = $(<span class="string">"element"</span>).css(<span class="string">"left"</span>); <span class="comment">// 获取</span></div><div class="line">$(<span class="string">"element"</span>).css(<span class="string">"top"</span>, currentTop + <span class="number">1</span>); <span class="comment">// 设置</span></div><div class="line">$(<span class="string">"element"</span>).css(<span class="string">"left"</span>, currentLeft + <span class="number">1</span>); <span class="comment">// 设置</span></div></pre></td></tr></table></figure>
+<h4 id="2-内存中保留一个变量"><a href="#2-内存中保留一个变量" class="headerlink" title="2.内存中保留一个变量"></a>2.内存中保留一个变量</h4><p>比如你的目的是在单击按钮的时候，切换侧边菜单的可见性。要想达到这一效果，你可能会先检查侧边菜单的display属性是设置成”none”还是”block”，然后再相应地进行值的替换。检查display属性的过程构成一次“获取”；后续不论是将侧边菜单显示出来还是隐藏起来都构成了一次“设置”。</p>
+<p>要想优化这种代码就必须在内存中保留一个变量，每当按钮点击时，这个变量跟着更新，然后在切换可见性之前，通过查询这个变量得知侧边菜单的当前状态。这样，“获取”的过程就完全省掉了，从而有助于减少设置和获取交替出现的可能性。另外，除了降低布局颠簸发生的可能性以外，UI现在还得益于减少了一次页面查询。记住：每次设置和获取对于浏览器操作来说都比较消耗性能；设置和获取次数越少，UI的速度就会越快。</p>
+<h4 id="3-缓存jQuery元素对象"><a href="#3-缓存jQuery元素对象" class="headerlink" title="3.缓存jQuery元素对象"></a>3.缓存jQuery元素对象</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 糟糕做法：未缓存JEO</span></div><div class="line">$(<span class="string">"#element"</span>).css(<span class="string">"opacity"</span>, <span class="number">1</span>);</div><div class="line"><span class="comment">// …… 一些中间代码……</span></div><div class="line"><span class="comment">// 我们再次将JEO实例化</span></div><div class="line">$(<span class="string">"#element"</span>).css(<span class="string">"opacity"</span>, <span class="number">0</span>);</div><div class="line"></div><div class="line"><span class="comment">// 缓存jQuery元素对象，在变量前面加个前缀$用来表示这是个JEO</span></div><div class="line"><span class="keyword">var</span> $element = $(<span class="string">"#element"</span>);</div><div class="line">$element.css(<span class="string">"opacity"</span>, <span class="number">1</span>);</div><div class="line"><span class="comment">// …… 一些中间代码 ……</span></div><div class="line"><span class="comment">// 我们复用了缓存的JEO，避免了一次DOM查询</span></div><div class="line">$element.css(<span class="string">"opacity”, 0);</span></div></pre></td></tr></table></figure>
+<h4 id="4-强制给值"><a href="#4-强制给值" class="headerlink" title="4.强制给值"></a>4.强制给值</h4><p>动画引擎的传统做法是在动画的一开始查询一遍DOM来确定每个被设置动画的CSS属性的初始值是多少。Velocity通过一种称为“强制给值”的功能可以绕过这一页面查询事件。这也是避免布局颠簸的另一项技术。通过强制给值，可以明确地为动画设置初始值，从而彻底免去了一开始就对页面进行获取的操作。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 设置translateX从初始值0变动至500像素的动画</span></div><div class="line">$element.velocity(&#123; translateX: [ <span class="number">500</span>, <span class="number">0</span> ] &#125;);</div><div class="line"><span class="comment">// 设置opacity从初始值1变动至0的动画</span></div><div class="line">$element.velocity(&#123; opacity: [ <span class="number">0</span>, <span class="number">1</span> ]);</div><div class="line"></div><div class="line">$element</div><div class="line">  <span class="comment">// 在此处可以选择强制给值</span></div><div class="line">  .velocity(&#123; translateX: [ <span class="number">500</span>, <span class="number">0</span> ] &#125;)</div><div class="line">  <span class="comment">// 不要在这里强制给值；500已经内部缓存起来了</span></div><div class="line">  .velocity(&#123; translateX: <span class="number">1000</span> &#125;);</div></pre></td></tr></table></figure>
+<h4 id="5-批量添加DOM"><a href="#5-批量添加DOM" class="headerlink" title="5.批量添加DOM"></a>5.批量添加DOM</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 优化后</span></div><div class="line"><span class="keyword">var</span> $body = $(<span class="string">"body"</span>);</div><div class="line"><span class="keyword">var</span> $newElements = [ <span class="string">"&lt;div&gt;Div 1&lt;/div&gt;"</span>, <span class="string">"&lt;div&gt;Div 2&lt;/div&gt;"</span>, <span class="string">"&lt;div&gt;Div 3&lt;/div&gt;"</span> ];</div><div class="line"><span class="keyword">var</span> html = <span class="string">""</span>;</div><div class="line">$newElements.each(<span class="function"><span class="keyword">function</span>(<span class="params">i, element</span>) </span>&#123;</div><div class="line">  html += element;</div><div class="line">&#125;);</div><div class="line">$(html).appendTo($body);</div></pre></td></tr></table></figure>
+<h4 id="6-技巧：避免影响临近的元素"><a href="#6-技巧：避免影响临近的元素" class="headerlink" title="6.技巧：避免影响临近的元素"></a>6.技巧：避免影响临近的元素</h4><p>有很多CSS属性，一经改变，就会造成临近元素尺寸或位置的调整，其中包括：<code>top</code>、<code>right</code>、<code>bottom</code>和<code>left</code>，所有的<code>margin</code>和<code>padding</code>属性，<code>border</code>厚度，以及<code>width</code>和<code>height</code>尺寸</p>
+<p>尽可能设置CSS的transform属性（<code>translateX</code>、<code>translateY</code>、<code>scaleX</code>、<code>scaleY</code>、<code>rotateZ</code>、<code>rotateX</code>和<code>rotateY</code>）的动画。<code>transform</code>属性的特殊之处在于它们将目标元素提升至一个单独的层，这个层可以独立于页面其他内容单独渲染（通过GPU加速提升性能）</p>
+<p>优先考虑<code>opacity</code>胜于<code>color</code></p>
+<h4 id="7-减少并发加载"><a href="#7-减少并发加载" class="headerlink" title="7.减少并发加载"></a>7.减少并发加载</h4><p>错开动画<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$elements.velocity(&#123; opacity: <span class="number">1</span> &#125;, &#123; stagger: <span class="number">300</span> &#125;);</div></pre></td></tr></table></figure></p>
+<p>多动画序列<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//原本</span></div><div class="line">$images.velocity(&#123; opacity: <span class="number">1</span>, boxShadowBlur: <span class="string">"50px"</span> &#125;);</div><div class="line"><span class="comment">//重构后</span></div><div class="line">$images</div><div class="line">  .velocity(&#123; opacity: <span class="number">1</span> &#125;)</div><div class="line">  .velocity(&#123; boxShadowBlur: <span class="string">"50px"</span> &#125;);</div></pre></td></tr></table></figure></p>
+<p>//这样浏览器就有更少的并发工作要做，因为这些都是一个接一个发生的单独属性动画。注意此处要进行权衡，因为我们增长了整个动画序列的持续时间。这对于最终的应用场景而言，也许是好事，也许是坏事。</p>
+<h4 id="8-技巧：减少图片渲染"><a href="#8-技巧：减少图片渲染" class="headerlink" title="8.技巧：减少图片渲染"></a>8.技巧：减少图片渲染</h4><p>因此，有两种最佳实践可以遵循：第一种，如果原本感觉在页面上添不添额外图片都无所谓的话，那么选择不添。要渲染的图片越少，UI性能就越好。（更不用说更少的图片给页面网络加载时间带来的正面影响。）</p>
+<p>第二种，如果你的UI在同时加载很多图片进入视图（比如，8幅或以上，根据设备硬件性能而定），考虑不要设置这些图片的动画，或者只是简单地切换每幅图片的可见性从不可见到可见。这种视觉效果可能并不优雅，要弥补这一点，可以考虑错开切换可见性的动画时间，使图片一个接一个显示而不是同时显示出来，这样做通常会产生出更精致的动效设计。</p>
+<p>暗中潜入的图片  CSS渐变（gradient） 阴影（shadow）属性</p>
+<h4 id="9-在旧浏览器上降级动画"><a href="#9-在旧浏览器上降级动画" class="headerlink" title="9.在旧浏览器上降级动画"></a>9.在旧浏览器上降级动画</h4><p>只要你使用了在第4章中介绍的全局动画乘数技术（或Velocity中对应的mock功能）。全局乘数技术使你能够通过一个变量改变整个网站的动画时间。因此，这里的诀窍就是：每当检测出用户正在使用性能较弱的浏览器，那么就将乘数设置为0（或者将$.Velocity.mock设置为true）。这样做就能让整个页面的动画都在一个动画tick（少于16毫秒）中完成：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 使所有动画立即完成</span></div><div class="line">$.Velocity.mock = <span class="literal">true</span>;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/09/animation/performance/" data-id="cisvcgxpf0001jcqkfub475ix" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Animation-performance/">Animation performance</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/09/09/JavaScript/CommonlyUsedFunction/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          常用函数
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/09/svg/reference/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">SVG</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/animation/">animation</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/events/">events</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/events/HTML-DOM-events/">HTML DOM events</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mobile/">mobile</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/svg/">svg</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Animation-performance/">Animation performance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Closures/">Closures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Content-type/">Content-type</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOMContentLoaded/">DOMContentLoaded</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Object-create/">Object.create</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/animation/">animation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/animation-library/">animation library</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apply/">apply()</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bind/">bind()</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call/">call()</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/clone/">clone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/concept/">concept</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/config/">config</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/currying/">currying</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/library/">library</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/load/">load</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onresize/">onresize</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/picture-compression/">picture compression</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/polymorphism/">polymorphism</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/position/">position</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setTimeout/">setTimeout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svg/">svg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tap/">tap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transition/">transition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uncurrying/">uncurrying</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Animation-performance/" style="font-size: 10px;">Animation performance</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Closures/" style="font-size: 15px;">Closures</a> <a href="/tags/Content-type/" style="font-size: 10px;">Content-type</a> <a href="/tags/DOMContentLoaded/" style="font-size: 10px;">DOMContentLoaded</a> <a href="/tags/JSON/" style="font-size: 20px;">JSON</a> <a href="/tags/Object-create/" style="font-size: 10px;">Object.create</a> <a href="/tags/animation/" style="font-size: 20px;">animation</a> <a href="/tags/animation-library/" style="font-size: 10px;">animation library</a> <a href="/tags/apply/" style="font-size: 15px;">apply()</a> <a href="/tags/bind/" style="font-size: 15px;">bind()</a> <a href="/tags/call/" style="font-size: 15px;">call()</a> <a href="/tags/clone/" style="font-size: 10px;">clone</a> <a href="/tags/concept/" style="font-size: 10px;">concept</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/currying/" style="font-size: 10px;">currying</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/library/" style="font-size: 10px;">library</a> <a href="/tags/load/" style="font-size: 10px;">load</a> <a href="/tags/onresize/" style="font-size: 10px;">onresize</a> <a href="/tags/picture-compression/" style="font-size: 10px;">picture compression</a> <a href="/tags/polymorphism/" style="font-size: 10px;">polymorphism</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/setTimeout/" style="font-size: 10px;">setTimeout</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tap/" style="font-size: 10px;">tap</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/uncurrying/" style="font-size: 10px;">uncurrying</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/09/14/animation/css3/">css过渡、动画和变换</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/14/mobile/tap/">轻触tap</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/09/JavaScript/CommonlyUsedFunction/">常用函数</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/09/animation/performance/">动画性能</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/09/svg/reference/">SVG</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 shanyang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/1.11.0/jquery.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

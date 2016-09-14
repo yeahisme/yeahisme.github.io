@@ -51,14 +51,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-JavaScript/polymorphism" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-animation/library" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/09/06/JavaScript/polymorphism/" class="article-date">
-  <time datetime="2016-09-06T10:36:03.756Z" itemprop="datePublished">2016-09-06</time>
+    <a href="/2016/09/07/animation/library/" class="article-date">
+  <time datetime="2016-09-07T10:49:18.297Z" itemprop="datePublished">2016-09-07</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    <a class="article-category-link" href="/categories/animation/">animation</a>
   </div>
 
   </div>
@@ -69,7 +69,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/06/JavaScript/polymorphism/">对象的多态性</a>
+      <a class="article-title" href="/2016/09/07/animation/library/">JavaScript动画库的种类</a>
     </h1>
   
 
@@ -77,94 +77,154 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>多态的最根本好处在于，你不必再向对象询问“你是什么类型”而后根据得到的答案调用对象的某个行为——你只管调用该行为就是了，其他的一切多态机制都会为你安排妥当</p>
-<p>多态最根本的作用就是通过把过程化的条件分支语句转化为对象的多态性，从而消除这些条件分支语句。</p>
-<p>在电影的拍摄现场，当导演喊出“action”时，主角开始背台词，照明师负责打灯光，后面的群众演员假装中枪倒地，道具师往镜头里撒上雪花。在得到同一个消息时，每个对象都知道自己应该做什么。如果不利用对象的多态性，而是用面向过程的方式来编写这一段代码，那么相当于在电影开始拍摄之后，导演每次都要走到每个人的面前，确认它们的职业分工（类型），然后告诉他们要做什么。如果映射到程序中，那么程序中将充斥着条件分支语句。</p>
-<p>利用对象的多态性，导演在发布消息时，就不必考虑各个对象接到消息后应该做什么。对象应该做什么并不是临时决定的，而是已经事先约定和排练完毕的。每个对象应该做什么，已经成为了该对象的一个方法，被安装在对象的内部，每个对象负责它们自己的行为。所以这些对象可以根据同一个消息，有条不紊地分别进行各自的工作。</p>
-<p>将行为分布在各个对象中，并让这些对象各自负责自己的行为，这正是面向对象设计的优点。</p>
+        <ul>
+<li>物理交互</li>
+<li>使WebGL和Canvas动画更易于维护</li>
+<li>SVG动画</li>
+<li>UI动画<br><a href="http://velocityjs.org" target="_blank" rel="external">Velocity</a>,<a href="http://greensock.com/" target="_blank" rel="external">GSAP</a>(收费)</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/07/animation/library/" data-id="cisss7zwz0000cgqk18cs11tn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/animation/">animation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/animation-library/">animation library</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-animation/workflow" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/07/animation/workflow/" class="article-date">
+  <time datetime="2016-09-07T03:20:08.193Z" itemprop="datePublished">2016-09-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/animation/">animation</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/07/animation/workflow/">动画工作流</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="没有完美的方法，适合自己项目的才是好方法"><a href="#没有完美的方法，适合自己项目的才是好方法" class="headerlink" title="没有完美的方法，适合自己项目的才是好方法"></a>没有完美的方法，适合自己项目的才是好方法</h4><h5 id="什么时候用CSS比较明智"><a href="#什么时候用CSS比较明智" class="headerlink" title="什么时候用CSS比较明智"></a>什么时候用CSS比较明智</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">button</span>&#123;</div><div class="line">	<span class="attribute">transition</span>:box-shadow ease-in <span class="number">500ms</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">button</span><span class="selector-pseudo">:hover</span>&#123;</div><div class="line">	<span class="attribute">box-shadow</span>:<span class="number">0px</span> <span class="number">0px</span> <span class="number">5px</span> <span class="number">#ccc</span>;</div><div class="line">&#125;</div><div class="line">`</div></pre></td></tr></table></figure>
+<h5 id="JavaScript将样式与逻辑分离"><a href="#JavaScript将样式与逻辑分离" class="headerlink" title="JavaScript将样式与逻辑分离"></a>JavaScript将样式与逻辑分离</h5><p>style.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> magnetizeIn = &#123;</div><div class="line">	p:&#123;</div><div class="line">		left:<span class="string">"230px"</span></div><div class="line">	&#125;,</div><div class="line">	o:&#123;</div><div class="line">		<span class="keyword">default</span>:&#123;</div><div class="line">			duration:<span class="number">1000</span>,</div><div class="line">			easing: <span class="string">"easeInQuart"</span></div><div class="line">		&#125;,</div><div class="line">		strong:&#123;</div><div class="line">			duration:<span class="number">1000</span>,</div><div class="line">			easing: [<span class="number">.94</span>,<span class="number">.57</span>,<span class="number">.92</span>,<span class="number">.55</span>]</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>script.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"#n"</span>).velocity(magnetizeIn.p,magnetizeIn.o.default);</div><div class="line">$(<span class="string">"#n"</span>).velocity(magnetizeIn.p,magnetizeIn.o.strong);</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/07/animation/workflow/" data-id="cisss7zxa0001cgqk14d3ipk2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/animation/">animation</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-animation/theory" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/07/animation/theory/" class="article-date">
+  <time datetime="2016-09-07T02:02:00.349Z" itemprop="datePublished">2016-09-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/animation/">animation</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/07/animation/theory/">动画设计理论</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>用本能反应</p>
+<ul>
+<li><p>运动</p>
+<blockquote>
+<p>人脑有一个区域专门用于视觉处理。不论我们愿意不愿意，在面对突然运动时都会作出反应，这是我们的本能</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> makeSound = <span class="function"><span class="keyword">function</span>(<span class="params"> animal </span>)</span>&#123;</div><div class="line">    animal.sound();</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> Duck = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"></div><div class="line">Duck.prototype.sound = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( <span class="string">'嘎嘎嘎'</span> );</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> Chicken = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"></div><div class="line">Chicken.prototype.sound = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( <span class="string">'咯咯咯'</span> );</div><div class="line">&#125;;</div><div class="line"></div><div class="line">makeSound( <span class="keyword">new</span> Duck() );        <span class="comment">// 嘎嘎嘎</span></div><div class="line">makeSound( <span class="keyword">new</span> Chicken() );     <span class="comment">// 咯咯咯</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> googleMap = &#123;</div><div class="line">    show: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log( <span class="string">'开始渲染谷歌地图'</span> );</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> baiduMap = &#123;</div><div class="line">    show: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log( <span class="string">'开始渲染百度地图'</span> );</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> renderMap = <span class="function"><span class="keyword">function</span>(<span class="params"> map </span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> ( map.show <span class="keyword">instanceof</span> <span class="built_in">Function</span> )&#123;</div><div class="line">        map.show();</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">renderMap( googleMap );    <span class="comment">// 输出：开始渲染谷歌地图</span></div><div class="line">renderMap( baiduMap );     <span class="comment">// 输出：开始渲染百度地图</span></div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/JavaScript/polymorphism/" data-id="ciss78kum0014ywqktzo2gj1d" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/polymorphism/">polymorphism</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript/javascript unique value" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/06/JavaScript/javascript unique value/" class="article-date">
-  <time datetime="2016-09-06T10:36:03.754Z" itemprop="datePublished">2016-09-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/06/JavaScript/javascript unique value/">javascript 数组去重 unique</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>很多场合都会取出数组的不同值</p>
-<h2 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h2><p>使用中间数组newArr，如果原数组的值不在newArr里则把该值存入。<br>主要用到了<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf" target="_blank" rel="external">Array.prototype.indexOf()</a>，由于兼容性的限制MDN也给出了Polyfill方案。</p>
-<table>
-<thead>
-<tr>
-<th>Chrome</th>
-<th>Firefox (Gecko)</th>
-<th>Internet Explorer</th>
-<th>Opera</th>
-<th>Safari</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>(Yes)</td>
-<td>1.5 (1.8)</td>
-<td>9</td>
-<td>(Yes)</td>
-<td>(Yes)</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Array</span>.prototype.unique = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> newArr = [];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) &#123;</div><div class="line">        <span class="keyword">if</span> (newArr.indexOf(<span class="keyword">this</span>[i]) == <span class="number">-1</span>) &#123;</div><div class="line">            newArr.push(<span class="keyword">this</span>[i]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> newArr;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//用法</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="string">"a"</span>,<span class="string">"a"</span>,<span class="string">"b"</span>]</div><div class="line"><span class="built_in">console</span>.log(arr.unique())</div></pre></td></tr></table></figure>
-<p>Polyfill-Array.prototype.indexOf()<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Production steps of ECMA-262, Edition 5, 15.4.4.14</span></div><div class="line"><span class="comment">// Reference: http://es5.github.io/#x15.4.4.14</span></div><div class="line"><span class="keyword">if</span> (!<span class="built_in">Array</span>.prototype.indexOf) &#123;</div><div class="line">  <span class="built_in">Array</span>.prototype.indexOf = <span class="function"><span class="keyword">function</span>(<span class="params">searchElement, fromIndex</span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> k;</div><div class="line"></div><div class="line">    <span class="comment">// 1. Let o be the result of calling ToObject passing</span></div><div class="line">    <span class="comment">//    the this value as the argument.</span></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span> == <span class="literal">null</span>) &#123;</div><div class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'"this" is null or not defined'</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> o = <span class="built_in">Object</span>(<span class="keyword">this</span>);</div><div class="line"></div><div class="line">    <span class="comment">// 2. Let lenValue be the result of calling the Get</span></div><div class="line">    <span class="comment">//    internal method of o with the argument "length".</span></div><div class="line">    <span class="comment">// 3. Let len be ToUint32(lenValue).</span></div><div class="line">    <span class="keyword">var</span> len = o.length &gt;&gt;&gt; <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="comment">// 4. If len is 0, return -1.</span></div><div class="line">    <span class="keyword">if</span> (len === <span class="number">0</span>) &#123;</div><div class="line">      <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 5. If argument fromIndex was passed let n be</span></div><div class="line">    <span class="comment">//    ToInteger(fromIndex); else let n be 0.</span></div><div class="line">    <span class="keyword">var</span> n = +fromIndex || <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (<span class="built_in">Math</span>.abs(n) === <span class="literal">Infinity</span>) &#123;</div><div class="line">      n = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 6. If n &gt;= len, return -1.</span></div><div class="line">    <span class="keyword">if</span> (n &gt;= len) &#123;</div><div class="line">      <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 7. If n &gt;= 0, then Let k be n.</span></div><div class="line">    <span class="comment">// 8. Else, n&lt;0, Let k be len - abs(n).</span></div><div class="line">    <span class="comment">//    If k is less than 0, then let k be 0.</span></div><div class="line">    k = <span class="built_in">Math</span>.max(n &gt;= <span class="number">0</span> ? n : len - <span class="built_in">Math</span>.abs(n), <span class="number">0</span>);</div><div class="line"></div><div class="line">    <span class="comment">// 9. Repeat, while k &lt; len</span></div><div class="line">    <span class="keyword">while</span> (k &lt; len) &#123;</div><div class="line">      <span class="comment">// a. Let Pk be ToString(k).</span></div><div class="line">      <span class="comment">//   This is implicit for LHS operands of the in operator</span></div><div class="line">      <span class="comment">// b. Let kPresent be the result of calling the</span></div><div class="line">      <span class="comment">//    HasProperty internal method of o with argument Pk.</span></div><div class="line">      <span class="comment">//   This step can be combined with c</span></div><div class="line">      <span class="comment">// c. If kPresent is true, then</span></div><div class="line">      <span class="comment">//    i.  Let elementK be the result of calling the Get</span></div><div class="line">      <span class="comment">//        internal method of o with the argument ToString(k).</span></div><div class="line">      <span class="comment">//   ii.  Let same be the result of applying the</span></div><div class="line">      <span class="comment">//        Strict Equality Comparison Algorithm to</span></div><div class="line">      <span class="comment">//        searchElement and elementK.</span></div><div class="line">      <span class="comment">//  iii.  If same is true, return k.</span></div><div class="line">      <span class="keyword">if</span> (k <span class="keyword">in</span> o &amp;&amp; o[k] === searchElement) &#123;</div><div class="line">        <span class="keyword">return</span> k;</div><div class="line">      &#125;</div><div class="line">      k++;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h2><ol>
-<li>创建一个新的数组存放结果</li>
-<li>创建一个空对象</li>
-<li>for循环时，每次取出一个元素与对象进行对比，如果这个元素不重复，则把它存放到结果数组中，同时把这个元素的内容作为对象的一个属性，并赋值为1，存入到第2步建立的对象中。</li>
+</li>
+<li><p>颜色</p>
+<blockquote>
+<p>红色-停止<br>绿色-前进<br>靠近-重要<br>远离-不重要</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>使人对互动充满欲望</p>
+</li>
+<li>体现重要性</li>
+<li>减少同时发生的动画</li>
+<li>减少动画种类</li>
+<li>镜像动画</li>
+<li>限制持续时间</li>
+<li>限制动画</li>
+<li>不要华而不</li>
+<li>唯一华而不实的机会（加载动画）</li>
+<li>考虑个性化</li>
+<li>不要拘泥于不透明度动画</li>
+<li>将动画拆分为多步</li>
+<li><p>错开动画</p>
+<blockquote>
+<p>鸟儿飞翔的时候不会并排成一条直线，它们的飞行看起来如此优美就是因为它们逐次改变队形，错开了时间</p>
+</blockquote>
+</li>
+<li><p>错开动画</p>
+</li>
+<li>从触发元素处产生动画</li>
+<li><p>使用图形</p>
+<blockquote>
+<p>可缩放矢量图形（SVG）</p>
+</blockquote>
+</li>
+<li><p>反复实验</p>
+<blockquote>
+<p>为每个动画确定正确的持续时间、错开动画、缓动效果和属性组合，这并非设计师生来就具备的技能。这一技能是每一位优秀设计师必须学习的。因此，请记住：你第一次尝试的动画属性组合，看起来可能还不错，但很可能还不是最佳效果。要想找到最佳效果，只有两种方法：一是反复实验，系统性地更改动效设计中的每一个因素，直至突然撞到一个超凡脱俗的效果；二是从别人的作品中借鉴做法。一旦找到一个喜欢的效果，还是要进一步实验，即使你已经一丝不差地实现了别人的这个效果。考虑是否要将持续时间减半，彻底换一种缓动类型或者更换一个属性。 设计师经常反感反复持久的实验，因为即使要把一个按钮动态显示出来也有上百万种做法，而每种做法都能有效地实现手头的目的：让按钮显示出来。结果，一旦你碰到一个属性组合构成的动画，效果还不赖，就很可能持续用它，因为看上去不错而且也能发挥作用。但请不要忘记，“不差”并不是一个值得尊敬的设计目标，“卓越”才是。要想达到卓越的水平，必须踏出舒适区，不要总是依赖于已经知道的那些起作用的设计。</p>
+</blockquote>
+</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Array</span>.prototype.unique2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> newArr = [];</div><div class="line">    <span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++)&#123;</div><div class="line">        <span class="keyword">if</span>(!obj[<span class="keyword">this</span>[i]])&#123;</div><div class="line">            newArr.push(<span class="keyword">this</span>[i]);</div><div class="line">            obj[<span class="keyword">this</span>[i]] = <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> newArr;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//用法</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="string">"a"</span>,<span class="string">"a"</span>,<span class="string">"b"</span>]</div><div class="line"><span class="built_in">console</span>.log(arr.unique2())</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/JavaScript/javascript unique value/" data-id="ciss78kuh0011ywqk2i2o2pi1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/07/animation/theory/" data-id="ciss8yuuf001gjgqkc1a0j4kx" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/animation/">animation</a></li></ul>
 
     </footer>
   </div>
@@ -173,10 +233,240 @@
 
 
   
-    <article id="post-JavaScript/Higher - Order Functions " class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-JSON/JSON tools" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/09/06/JavaScript/Higher - Order Functions /" class="article-date">
-  <time datetime="2016-09-06T10:36:03.753Z" itemprop="datePublished">2016-09-06</time>
+    <a href="/2016/09/06/JSON/JSON tools/" class="article-date">
+  <time datetime="2016-09-06T10:36:03.769Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JSON/">JSON</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/06/JSON/JSON tools/">格式化和验证JSON的工具</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://jsonformatter.curiousconcept.com/" target="_blank" rel="external">JSON Formatter &amp; Validator</a>  </p>
+<p>这是一个带有配置选项、能够高亮错误且 UI 很棒的格式化工具。经过处理的 JSON 会显示在两个窗口，一个用于展示 JSON 的树 / 节点结构，类似于可视化工具，另一个用于复制 / 粘贴格式化后的代码。</p>
+<p><a href="http://www.jsoneditoronline.org/" target="_blank" rel="external">JSON Editor Online</a>  </p>
+<p>这是一个集验证、格式化和可视化工具于一身的 JSON 工具。错误提示会显示在出错的那一行。除了验证以外，还会显示解析错误的详情。右边的可视化工具使用树 / 节点的形式来展示 JSON。</p>
+<p><a href="http://jsonlint.com/" target="_blank" rel="external">JSONLint</a>  </p>
+<p>这是一个毫不花哨的 JSON 验证工具。简单地复制、粘贴、验证即可。也可以友好地格式化你的 JSON。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/06/JSON/JSON tools/" data-id="ciss8yusb000djgqkayangize" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON/">JSON</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JSON/JSON in Visual drag and drop" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/06/JSON/JSON in Visual drag and drop/" class="article-date">
+  <time datetime="2016-09-06T10:36:03.767Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JSON/">JSON</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/06/JSON/JSON in Visual drag and drop/">可视化数据中的JSON数据交换</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"index"</span>: [&#123;</div><div class="line">        <span class="attr">"id"</span>: <span class="string">"M1471676332100"</span>,</div><div class="line">        <span class="attr">"temp"</span>: <span class="string">"search"</span>,</div><div class="line">        <span class="attr">"params"</span>: &#123;</div><div class="line">            <span class="attr">"placeholder"</span>: <span class="string">"搜索：输入关键字在店内搜索"</span>,</div><div class="line">            <span class="attr">"style"</span>: <span class="string">"style1"</span>,</div><div class="line">            <span class="attr">"color"</span>: <span class="string">""</span>,</div><div class="line">            <span class="attr">"bgcolor"</span>: <span class="string">""</span>,</div><div class="line">            <span class="attr">"bordercolor"</span>: <span class="string">""</span>,</div><div class="line">            <span class="attr">"searchurl"</span>: <span class="string">"http://www.baidu.com/img/001"</span>,</div><div class="line">            <span class="attr">"uniacid"</span>: <span class="string">"2"</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"data"</span>: <span class="string">""</span>,</div><div class="line">        <span class="attr">"other"</span>: <span class="string">""</span>,</div><div class="line">        <span class="attr">"content"</span>: <span class="string">""</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        <span class="attr">"id"</span>: <span class="string">"M1471677092390"</span>,</div><div class="line">        <span class="attr">"temp"</span>: <span class="string">"picture"</span>,</div><div class="line">        <span class="attr">"params"</span>: &#123;&#125;,</div><div class="line">        <span class="attr">"data"</span>: &#123;</div><div class="line">            <span class="attr">"0"</span>: &#123;</div><div class="line">                <span class="attr">"id"</span>: <span class="string">"P1471677097039"</span>,</div><div class="line">                <span class="attr">"imgurl"</span>: <span class="string">"http://www.baidu.com/img/002"</span>,</div><div class="line">                <span class="attr">"hrefurl"</span>: <span class="string">""</span>,</div><div class="line">                <span class="attr">"option"</span>: <span class="string">"0"</span></div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"other"</span>: <span class="string">""</span>,</div><div class="line">        <span class="attr">"content"</span>: <span class="string">""</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        <span class="attr">"id"</span>: <span class="string">"M1471676064030"</span>,</div><div class="line">        <span class="attr">"temp"</span>: <span class="string">"banner"</span>,</div><div class="line">        <span class="attr">"params"</span>: &#123;</div><div class="line">            <span class="attr">"shape"</span>: <span class="string">"shape3"</span>,</div><div class="line">            <span class="attr">"align"</span>: <span class="string">"center"</span>,</div><div class="line">            <span class="attr">"scroll"</span>: <span class="string">"2"</span>,</div><div class="line">            <span class="attr">"bgcolor"</span>: <span class="string">""</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"data"</span>: &#123;</div><div class="line">            <span class="attr">"0"</span>: &#123;</div><div class="line">                <span class="attr">"id"</span>: <span class="string">"B0000000000001"</span>,</div><div class="line">                <span class="attr">"imgurl"</span>: <span class="string">"http://www.baidu.com/img/003"</span>,</div><div class="line">                <span class="attr">"hrefurl"</span>: <span class="string">"http://www.baidu.com/img/004"</span>,</div><div class="line">                <span class="attr">"sysurl"</span>: <span class="string">"url"</span></div><div class="line">            &#125;,</div><div class="line">            <span class="attr">"1"</span>: &#123;</div><div class="line">                <span class="attr">"id"</span>: <span class="string">"B0000000000003"</span>,</div><div class="line">                <span class="attr">"imgurl"</span>: <span class="string">"http://www.baidu.com/img/005"</span>,</div><div class="line">                <span class="attr">"hrefurl"</span>: <span class="string">"http://www.baidu.com/img/006"</span>,</div><div class="line">                <span class="attr">"sysurl"</span>: <span class="string">"url"</span></div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"other"</span>: <span class="string">""</span>,</div><div class="line">        <span class="attr">"content"</span>: <span class="string">""</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        <span class="attr">"id"</span>: <span class="string">"M1471685703155"</span>,</div><div class="line">        <span class="attr">"temp"</span>: <span class="string">"picture"</span>,</div><div class="line">        <span class="attr">"params"</span>: &#123;&#125;,</div><div class="line">        <span class="attr">"data"</span>: &#123;</div><div class="line">            <span class="attr">"0"</span>: &#123;</div><div class="line">                <span class="attr">"id"</span>: <span class="string">"P1471685711899"</span>,</div><div class="line">                <span class="attr">"imgurl"</span>: <span class="string">"图片地址"</span>,</div><div class="line">                <span class="attr">"hrefurl"</span>: <span class="string">""</span>,</div><div class="line">                <span class="attr">"option"</span>: <span class="string">"0"</span></div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"other"</span>: <span class="string">""</span>,</div><div class="line">        <span class="attr">"content"</span>: <span class="string">""</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        <span class="attr">"id"</span>: <span class="string">"M1471680706034"</span>,</div><div class="line">        <span class="attr">"temp"</span>: <span class="string">"goods"</span>,</div><div class="line">        <span class="attr">"params"</span>: &#123;</div><div class="line">            <span class="attr">"style"</span>: <span class="string">"33.3%"</span>,</div><div class="line">            <span class="attr">"showtitle"</span>: <span class="string">"1"</span>,</div><div class="line">            <span class="attr">"titlecolor"</span>: <span class="string">""</span>,</div><div class="line">            <span class="attr">"bgcolor"</span>: <span class="string">""</span>,</div><div class="line">            <span class="attr">"showname"</span>: <span class="string">"1"</span>,</div><div class="line">            <span class="attr">"title"</span>: <span class="string">""</span>,</div><div class="line">            <span class="attr">"option"</span>: <span class="string">"sale-xs"</span>,</div><div class="line">            <span class="attr">"buysub"</span>: <span class="string">""</span>,</div><div class="line">            <span class="attr">"price"</span>: <span class="string">"1"</span>,</div><div class="line">            <span class="attr">"goodhref"</span>: <span class="string">"链接地址"</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"data"</span>: &#123;</div><div class="line">            <span class="attr">"0"</span>: &#123;</div><div class="line">                <span class="attr">"id"</span>: <span class="string">"G1471688340872"</span>,</div><div class="line">                <span class="attr">"img"</span>: <span class="string">"图片地址"</span>,</div><div class="line">                <span class="attr">"goodid"</span>: <span class="string">"46"</span>,</div><div class="line">                <span class="attr">"name"</span>: <span class="string">"商品名称"</span>,</div><div class="line">                <span class="attr">"priceold"</span>: <span class="string">"168.00"</span>,</div><div class="line">                <span class="attr">"pricenow"</span>: <span class="string">"119.00"</span></div><div class="line">            &#125;,</div><div class="line">            <span class="attr">"1"</span>: &#123;</div><div class="line">                <span class="attr">"id"</span>: <span class="string">"G1471689764308"</span>,</div><div class="line">                <span class="attr">"img"</span>: <span class="string">"图片地址"</span>,</div><div class="line">                <span class="attr">"goodid"</span>: <span class="string">"47"</span>,</div><div class="line">                <span class="attr">"name"</span>: <span class="string">"商品名称"</span>,</div><div class="line">                <span class="attr">"priceold"</span>: <span class="string">"0.00"</span>,</div><div class="line">                <span class="attr">"pricenow"</span>: <span class="string">"0.00"</span></div><div class="line">            &#125;,</div><div class="line">            <span class="attr">"2"</span>: &#123;</div><div class="line">                <span class="attr">"id"</span>: <span class="string">"G1471690360135"</span>,</div><div class="line">                <span class="attr">"img"</span>: <span class="string">"图片地址"</span>,</div><div class="line">                <span class="attr">"goodid"</span>: <span class="string">"48"</span>,</div><div class="line">                <span class="attr">"name"</span>: <span class="string">"商品名称"</span>,</div><div class="line">                <span class="attr">"priceold"</span>: <span class="string">"149.00"</span>,</div><div class="line">                <span class="attr">"pricenow"</span>: <span class="string">"100.00"</span></div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"other"</span>: <span class="string">""</span>,</div><div class="line">        <span class="attr">"content"</span>: <span class="string">""</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        <span class="attr">"id"</span>: <span class="string">"M1471685953905"</span>,</div><div class="line">        <span class="attr">"temp"</span>: <span class="string">"picture"</span>,</div><div class="line">        <span class="attr">"params"</span>: &#123;&#125;,</div><div class="line">        <span class="attr">"data"</span>: &#123;</div><div class="line">            <span class="attr">"0"</span>: &#123;</div><div class="line">                <span class="attr">"id"</span>: <span class="string">"P0000000000001"</span>,</div><div class="line">                <span class="attr">"imgurl"</span>: <span class="string">"图片地址"</span>,</div><div class="line">                <span class="attr">"hrefurl"</span>: <span class="string">""</span>,</div><div class="line">                <span class="attr">"option"</span>: <span class="string">"0"</span></div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"other"</span>: <span class="string">""</span>,</div><div class="line">        <span class="attr">"content"</span>: <span class="string">""</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        <span class="attr">"id"</span>: <span class="string">"M1471680931977"</span>,</div><div class="line">        <span class="attr">"temp"</span>: <span class="string">"goods"</span>,</div><div class="line">        <span class="attr">"params"</span>: &#123;</div><div class="line">            <span class="attr">"style"</span>: <span class="string">"49.5%"</span>,</div><div class="line">            <span class="attr">"showtitle"</span>: <span class="string">"1"</span>,</div><div class="line">            <span class="attr">"titlecolor"</span>: <span class="string">""</span>,</div><div class="line">            <span class="attr">"bgcolor"</span>: <span class="string">""</span>,</div><div class="line">            <span class="attr">"showname"</span>: <span class="string">"1"</span>,</div><div class="line">            <span class="attr">"title"</span>: <span class="string">"栏目标题"</span>,</div><div class="line">            <span class="attr">"option"</span>: <span class="string">""</span>,</div><div class="line">            <span class="attr">"buysub"</span>: <span class="string">""</span>,</div><div class="line">            <span class="attr">"price"</span>: <span class="string">"1"</span>,</div><div class="line">            <span class="attr">"goodhref"</span>: <span class="string">"链接地址"</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"data"</span>: &#123;</div><div class="line">            <span class="attr">"0"</span>: &#123;</div><div class="line">                <span class="attr">"id"</span>: <span class="string">"G1471680939225"</span>,</div><div class="line">                <span class="attr">"img"</span>: <span class="string">"图片地址"</span>,</div><div class="line">                <span class="attr">"goodid"</span>: <span class="string">"42"</span>,</div><div class="line">                <span class="attr">"name"</span>: <span class="string">"商品标题"</span>,</div><div class="line">                <span class="attr">"priceold"</span>: <span class="string">"110.00"</span>,</div><div class="line">                <span class="attr">"pricenow"</span>: <span class="string">"100.00"</span></div><div class="line">            &#125;,</div><div class="line">            <span class="attr">"1"</span>: &#123;</div><div class="line">                <span class="attr">"id"</span>: <span class="string">"G1471837388848"</span>,</div><div class="line">                <span class="attr">"img"</span>: <span class="string">"商品链接"</span>,</div><div class="line">                <span class="attr">"goodid"</span>: <span class="string">"50"</span>,</div><div class="line">                <span class="attr">"name"</span>: <span class="string">"商品标题"</span>,</div><div class="line">                <span class="attr">"priceold"</span>: <span class="string">"886.00"</span>,</div><div class="line">                <span class="attr">"pricenow"</span>: <span class="string">"668.00"</span></div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"other"</span>: <span class="string">""</span>,</div><div class="line">        <span class="attr">"content"</span>: <span class="string">""</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        <span class="attr">"id"</span>: <span class="string">"M1471685949969"</span>,</div><div class="line">        <span class="attr">"temp"</span>: <span class="string">"picture"</span>,</div><div class="line">        <span class="attr">"params"</span>: &#123;&#125;,</div><div class="line">        <span class="attr">"data"</span>: &#123;</div><div class="line">            <span class="attr">"0"</span>: &#123;</div><div class="line">                <span class="attr">"id"</span>: <span class="string">"P0000000000001"</span>,</div><div class="line">                <span class="attr">"imgurl"</span>: <span class="string">"图片链接"</span>,</div><div class="line">                <span class="attr">"hrefurl"</span>: <span class="string">""</span>,</div><div class="line">                <span class="attr">"option"</span>: <span class="string">"0"</span></div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"other"</span>: <span class="string">""</span>,</div><div class="line">        <span class="attr">"content"</span>: <span class="string">""</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        <span class="attr">"id"</span>: <span class="string">"M1471684254958"</span>,</div><div class="line">        <span class="attr">"temp"</span>: <span class="string">"goods"</span>,</div><div class="line">        <span class="attr">"params"</span>: &#123;</div><div class="line">            <span class="attr">"style"</span>: <span class="string">"49.5%"</span>,</div><div class="line">            <span class="attr">"showtitle"</span>: <span class="string">"1"</span>,</div><div class="line">            <span class="attr">"titlecolor"</span>: <span class="string">""</span>,</div><div class="line">            <span class="attr">"bgcolor"</span>: <span class="string">""</span>,</div><div class="line">            <span class="attr">"showname"</span>: <span class="string">"1"</span>,</div><div class="line">            <span class="attr">"title"</span>: <span class="string">"栏目标题"</span>,</div><div class="line">            <span class="attr">"option"</span>: <span class="string">""</span>,</div><div class="line">            <span class="attr">"buysub"</span>: <span class="string">""</span>,</div><div class="line">            <span class="attr">"price"</span>: <span class="string">"1"</span>,</div><div class="line">            <span class="attr">"goodhref"</span>: <span class="string">"链接地址"</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"data"</span>: &#123;</div><div class="line">            <span class="attr">"0"</span>: &#123;</div><div class="line">                <span class="attr">"id"</span>: <span class="string">"G1471688061138"</span>,</div><div class="line">                <span class="attr">"img"</span>: <span class="string">"图片地址"</span>,</div><div class="line">                <span class="attr">"goodid"</span>: <span class="string">"46"</span>,</div><div class="line">                <span class="attr">"name"</span>: <span class="string">"商品标题"</span>,</div><div class="line">                <span class="attr">"priceold"</span>: <span class="string">"168.00"</span>,</div><div class="line">                <span class="attr">"pricenow"</span>: <span class="string">"119.00"</span></div><div class="line">            &#125;,</div><div class="line">            <span class="attr">"1"</span>: &#123;</div><div class="line">                <span class="attr">"id"</span>: <span class="string">"G1471688925554"</span>,</div><div class="line">                <span class="attr">"img"</span>: <span class="string">"图片地址"</span>,</div><div class="line">                <span class="attr">"goodid"</span>: <span class="string">"47"</span>,</div><div class="line">                <span class="attr">"name"</span>: <span class="string">"商品标题"</span>,</div><div class="line">                <span class="attr">"priceold"</span>: <span class="string">"0.00"</span>,</div><div class="line">                <span class="attr">"pricenow"</span>: <span class="string">"0.00"</span></div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"other"</span>: <span class="string">""</span>,</div><div class="line">        <span class="attr">"content"</span>: <span class="string">""</span></div><div class="line">    &#125;]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/06/JSON/JSON in Visual drag and drop/" data-id="ciss8yus9000cjgqkv893prrj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON/">JSON</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JSON/JSON in PHP" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/06/JSON/JSON in PHP/" class="article-date">
+  <time datetime="2016-09-06T10:36:03.766Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JSON/">JSON</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/06/JSON/JSON in PHP/">PHP中的JSON</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>序列化JSON  </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Account</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> $firstName;</div><div class="line">    <span class="keyword">public</span> $lastName;</div><div class="line">    <span class="keyword">public</span> $phone;</div><div class="line">    <span class="keyword">public</span> $gender;</div><div class="line">    <span class="keyword">public</span> $addresses;</div><div class="line">    <span class="keyword">public</span> $famous;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Address</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> $street;</div><div class="line">    <span class="keyword">public</span> $city;</div><div class="line">    <span class="keyword">public</span> $state;</div><div class="line">    <span class="keyword">public</span> $zip;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$address1 = <span class="keyword">new</span> Address();</div><div class="line">$address1-&gt;street = <span class="string">"123 fakey st"</span>;</div><div class="line">$address1-&gt;city = <span class="string">"Somewhere"</span>;</div><div class="line">$address1-&gt;state = <span class="string">"CA"</span>;</div><div class="line">$address1-&gt;zip = <span class="number">96027</span>;</div><div class="line"></div><div class="line">$address2 = <span class="keyword">new</span> Address();</div><div class="line">$address2-&gt;street = <span class="string">"456 fake dr"</span>;</div><div class="line">$address2-&gt;city = <span class="string">"Some Place"</span>;</div><div class="line">$address2-&gt;state = <span class="string">"CA"</span>;</div><div class="line">$address2-&gt;zip = <span class="number">96345</span>;</div><div class="line"></div><div class="line">$account = <span class="keyword">new</span> Account();</div><div class="line">$account-&gt;firstName = <span class="string">"Bob"</span>;</div><div class="line">$account-&gt;lastName = <span class="string">"Barker"</span>;</div><div class="line">$account-&gt;gender = <span class="string">"male"</span>;</div><div class="line">$account-&gt;phone = <span class="string">"555-555-5555"</span>;</div><div class="line">$account-&gt;famous = <span class="keyword">true</span>;</div><div class="line">$account-&gt;addresses = <span class="keyword">array</span> ($address1, $address2);</div><div class="line"></div><div class="line">$json = json_encode($account);</div><div class="line"></div><div class="line"><span class="comment">// output</span></div><div class="line">&#123;</div><div class="line">    <span class="string">"firstName"</span>: <span class="string">"Bob"</span>,</div><div class="line">    <span class="string">"lastName"</span>: <span class="string">"Barker"</span>,</div><div class="line">    <span class="string">"phone"</span>: <span class="string">"555-555-5555"</span>,</div><div class="line">    <span class="string">"gender"</span>: <span class="string">"male"</span>,</div><div class="line">    <span class="string">"addresses"</span>: [</div><div class="line">        &#123;</div><div class="line">            <span class="string">"street"</span>: <span class="string">"123 fakey st"</span>,</div><div class="line">            <span class="string">"city"</span>: <span class="string">"Somewhere"</span>,</div><div class="line">            <span class="string">"state"</span>: <span class="string">"CA"</span>,</div><div class="line">            <span class="string">"zip"</span>: <span class="number">96027</span></div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">            <span class="string">"street"</span>: <span class="string">"456 fake dr"</span>,</div><div class="line">            <span class="string">"city"</span>: <span class="string">"Some Place"</span>,</div><div class="line">            <span class="string">"state"</span>: <span class="string">"CA"</span>,</div><div class="line">            <span class="string">"zip"</span>: <span class="number">96345</span></div><div class="line">        &#125;</div><div class="line">    ],</div><div class="line">    <span class="string">"famous"</span>: <span class="keyword">true</span></div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>反序列化JSON</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Account</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> $firstName;</div><div class="line">    <span class="keyword">public</span> $lastName;</div><div class="line">    <span class="keyword">public</span> $phone;</div><div class="line">    <span class="keyword">public</span> $gender;</div><div class="line">    <span class="keyword">public</span> $addresses;</div><div class="line">    <span class="keyword">public</span> $famous;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">loadFromJSON</span><span class="params">($json)</span></span></div><div class="line">    &#123;</div><div class="line">        $object = json_decode($json);</div><div class="line">        <span class="keyword">foreach</span> ($object <span class="keyword">AS</span> $name =&gt; $value)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">$this</span>-&gt;&#123;$name&#125; = $value;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$json = json_encode($account);</div><div class="line"></div><div class="line">$deserializedAccount = <span class="keyword">new</span> Account();</div><div class="line">$deserializedAccount-&gt;loadFromJSON($json);</div><div class="line"></div><div class="line"><span class="keyword">echo</span> $deserializedAccount-&gt;firstName . <span class="string">" "</span> . $deserializedAccount-&gt;lastName;</div></pre></td></tr></table></figure>
+<p>请求JSON</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$url = <span class="string">"http://localhost:5984/accounts/3636fa3c716f9dd4f7407bd6f700076c"</span>;</div><div class="line">$json = file_get_contents($url);</div><div class="line">$deserializedAccount = <span class="keyword">new</span> Account();</div><div class="line">$deserializedAccount-&gt;loadFromJSON($json);</div><div class="line"></div><div class="line"><span class="keyword">echo</span> $deserializedAccount-&gt;firstName . <span class="string">" "</span> . $deserializedAccount-&gt;lastName;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/06/JSON/JSON in PHP/" data-id="ciss8yus40009jgqk9wzkkf8v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON/">JSON</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JSON/JSON in Node.js" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/06/JSON/JSON in Node.js/" class="article-date">
+  <time datetime="2016-09-06T10:36:03.765Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JSON/">JSON</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/06/JSON/JSON in Node.js/">Node.js中的JSON</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>反序列化JSON  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var http = require(&apos;http&apos;);</div><div class="line">http.get(&#123;</div><div class="line">    host: &apos;api.openweathermap.org&apos;,</div><div class="line">    path: &apos;/data/2.5/weather?q=London,uk&apos;</div><div class="line">&#125;, function(response) &#123;</div><div class="line">    var body = &apos;&apos;;</div><div class="line">    response.on(&apos;data&apos;, function(data) &#123;</div><div class="line">        body += data;</div><div class="line">    &#125;);</div><div class="line">    response.on(&apos;end&apos;, function() &#123;</div><div class="line">        var weatherData = JSON.parse(body);</div><div class="line">        console.log(weatherData.coord.lon);</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/06/JSON/JSON in Node.js/" data-id="ciss8yus00008jgqkwcndmr3f" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON/">JSON</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JSON/configuration" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/06/JSON/configuration/" class="article-date">
+  <time datetime="2016-09-06T10:36:03.764Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JSON/">JSON</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/06/JSON/configuration/">作为配置文件的JSON</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用 JSON 格式的某游戏配置文件（settings.json）</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"general"</span>: &#123;</div><div class="line">        <span class="attr">"playIntro"</span>: <span class="literal">false</span>,</div><div class="line">        <span class="attr">"mouseSensitivity"</span>: <span class="number">0.54</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"display"</span>: &#123;</div><div class="line">        <span class="attr">"complexTextures"</span>: <span class="literal">true</span>,</div><div class="line">        <span class="attr">"brightness"</span>: <span class="number">4.2</span>,</div><div class="line">        <span class="attr">"widgetsPerFrame"</span>: <span class="number">326</span>,</div><div class="line">        <span class="attr">"mode"</span>: <span class="string">"windowed"</span></div><div class="line">    &#125;,</div><div class="line">        <span class="attr">"sound"</span>: &#123;</div><div class="line">        <span class="attr">"volume"</span>: <span class="number">1</span>,</div><div class="line">        <span class="attr">"effects"</span>: <span class="number">0.68</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用 INI 格式的某游戏配置文件（settings.ini）</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="section">[general]</span></div><div class="line"><span class="attr">playIntro</span>=<span class="literal">false</span></div><div class="line"><span class="attr">mouseSensitivity</span>=<span class="number">0.54</span></div><div class="line"><span class="section"></span></div><div class="line">[display]</div><div class="line"><span class="attr">complexTextures</span>=<span class="literal">true</span></div><div class="line"><span class="attr">brightness</span>=<span class="number">4.2</span></div><div class="line"><span class="attr">widgetsPerFrame</span>=<span class="number">326</span></div><div class="line"><span class="attr">mode</span>=windowed</div><div class="line"><span class="section"></span></div><div class="line">[sound]</div><div class="line"><span class="attr">volume</span>=<span class="number">1</span></div><div class="line"><span class="attr">effects</span>=<span class="number">0.68</span></div></pre></td></tr></table></figure>
+<p>使用 XML 格式的某游戏配置文件（settings.xml）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span> <span class="meta">?&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">general</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">playIntro</span>&gt;</span>false<span class="tag">&lt;/<span class="name">playIntro</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">mouseSensitivity</span>&gt;</span>0.54<span class="tag">&lt;/<span class="name">mouseSensitivity</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">general</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">display</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">complexTextures</span>&gt;</span>true<span class="tag">&lt;/<span class="name">complexTextures</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">brightness</span>&gt;</span>4.2<span class="tag">&lt;/<span class="name">brightness</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">widgetsPerFrame</span>&gt;</span>326<span class="tag">&lt;/<span class="name">widgetsPerFrame</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">display</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">sound</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">volume</span>&gt;</span>1<span class="tag">&lt;/<span class="name">volume</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">effects</span>&gt;</span>0.68<span class="tag">&lt;/<span class="name">effects</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">sound</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>npm 的 package.json 示例文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;name&quot;: &quot;hexo-site&quot;,</div><div class="line">  &quot;version&quot;: &quot;0.0.0&quot;,</div><div class="line">  &quot;private&quot;: true,</div><div class="line">  &quot;hexo&quot;: &#123;</div><div class="line">    &quot;version&quot;: &quot;3.2.2&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;dependencies&quot;: &#123;</div><div class="line">    &quot;hexo&quot;: &quot;^3.2.0&quot;,</div><div class="line">    &quot;hexo-deployer-git&quot;: &quot;^0.2.0&quot;,</div><div class="line">    &quot;hexo-generator-archive&quot;: &quot;^0.1.4&quot;,</div><div class="line">    &quot;hexo-generator-category&quot;: &quot;^0.1.3&quot;,</div><div class="line">    &quot;hexo-generator-index&quot;: &quot;^0.2.0&quot;,</div><div class="line">    &quot;hexo-generator-tag&quot;: &quot;^0.2.0&quot;,</div><div class="line">    &quot;hexo-renderer-ejs&quot;: &quot;^0.2.0&quot;,</div><div class="line">    &quot;hexo-renderer-marked&quot;: &quot;^0.2.10&quot;,</div><div class="line">    &quot;hexo-renderer-stylus&quot;: &quot;^0.3.1&quot;,</div><div class="line">    &quot;hexo-server&quot;: &quot;^0.2.0&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/06/JSON/configuration/" data-id="ciss8yusf000ejgqkhx4y8fwi" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/config/">config</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JavaScript/uncurrying" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/06/JavaScript/uncurrying/" class="article-date">
+  <time datetime="2016-09-06T10:36:03.760Z" itemprop="datePublished">2016-09-06</time>
 </a>
     
   <div class="article-category">
@@ -191,7 +481,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/06/JavaScript/Higher - Order Functions /">闭包实例</a>
+      <a class="article-title" href="/2016/09/06/JavaScript/uncurrying/">反柯里化-高价函数应用</a>
     </h1>
   
 
@@ -199,368 +489,75 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>函数作为参数传递</p>
-<p>回调函数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> getUserInfo = <span class="function"><span class="keyword">function</span>(<span class="params"> userId, callback </span>)</span>&#123;</div><div class="line">     $.ajax( <span class="string">'http://xxx.com/getUserInfo?'</span> + userId, <span class="function"><span class="keyword">function</span>(<span class="params"> data </span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span> ( <span class="keyword">typeof</span> callback === <span class="string">'function'</span> )&#123;</div><div class="line">            callback( data );</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">getUserInfo( <span class="number">13157</span>, <span class="function"><span class="keyword">function</span>(<span class="params"> data </span>)</span>&#123;</div><div class="line">    alert ( data.userName );</div><div class="line">&#125;);</div><div class="line"></div><div class="line"> <span class="keyword">var</span> appendDiv = <span class="function"><span class="keyword">function</span>(<span class="params"> callback </span>)</span>&#123;</div><div class="line">    <span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++ )&#123;</div><div class="line">        <span class="keyword">var</span> div = <span class="built_in">document</span>.createElement( <span class="string">'div'</span> );</div><div class="line">        div.innerHTML = i;</div><div class="line">        <span class="built_in">document</span>.body.appendChild( div );</div><div class="line">        <span class="keyword">if</span> ( <span class="keyword">typeof</span> callback === <span class="string">'function'</span> )&#123;</div><div class="line">            callback( div );</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">appendDiv(<span class="function"><span class="keyword">function</span>(<span class="params"> node </span>)</span>&#123;</div><div class="line">    node.style.display = <span class="string">'none'</span>;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>Array.prototype.sort</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//从小到大排列</span></div><div class="line"></div><div class="line">[ <span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span> ].sort( <span class="function"><span class="keyword">function</span>(<span class="params"> a, b </span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a - b;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 输出: [ 1, 3, 4 ]</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//从大到小排列</span></div><div class="line"></div><div class="line">[ <span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span> ].sort( <span class="function"><span class="keyword">function</span>(<span class="params"> a, b </span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> b - a;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 输出: [ 4, 3, 1 ]</span></div></pre></td></tr></table></figure>
-<p>函数作为返回值输出</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Type = &#123;&#125;;</div><div class="line"></div><div class="line"><span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>, type; type = [ <span class="string">'String'</span>, <span class="string">'Array'</span>, <span class="string">'Number'</span> ][ i++ ]; )&#123;</div><div class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params"> type </span>)</span>&#123;</div><div class="line">        Type[ <span class="string">'is'</span> + type ] = <span class="function"><span class="keyword">function</span>(<span class="params"> obj </span>)</span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call( obj ) === <span class="string">'[object '</span>+ type +<span class="string">']'</span>;</div><div class="line">           &#125;</div><div class="line">       &#125;)( type )</div><div class="line">&#125;;</div><div class="line"></div><div class="line">Type.isArray( [] );     <span class="comment">// 输出：true</span></div><div class="line">Type.isString( <span class="string">"str"</span> );     <span class="comment">// 输出：true</span></div></pre></td></tr></table></figure>
-<p>getSingle</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> getSingle = <span class="function"><span class="keyword">function</span> (<span class="params"> fn </span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> ret;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> ret || ( ret = fn.apply( <span class="keyword">this</span>, <span class="built_in">arguments</span> ) );</div><div class="line">    &#125;;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> getScript = getSingle(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">document</span>.createElement( <span class="string">'script'</span> );</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">var</span> script1 = getScript();</div><div class="line"><span class="keyword">var</span> script2 = getScript();</div><div class="line"></div><div class="line">alert ( script1 === script2 );    <span class="comment">// 输出：true</span></div></pre></td></tr></table></figure>
-<p>高阶函数实现AOP</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Function</span>.prototype.before = <span class="function"><span class="keyword">function</span>(<span class="params"> beforefn </span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> __self = <span class="keyword">this</span>;    <span class="comment">// 保存原函数的引用</span></div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;    <span class="comment">// 返回包含了原函数和新函数的"代理"函数</span></div><div class="line">        beforefn.apply( <span class="keyword">this</span>, <span class="built_in">arguments</span> );     <span class="comment">// 执行新函数，修正this</span></div><div class="line">        <span class="keyword">return</span> __self.apply( <span class="keyword">this</span>, <span class="built_in">arguments</span> );    <span class="comment">// 执行原函数</span></div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">Function</span>.prototype.after = <span class="function"><span class="keyword">function</span>(<span class="params"> afterfn </span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> __self = <span class="keyword">this</span>;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> ret = __self.apply( <span class="keyword">this</span>, <span class="built_in">arguments</span> );</div><div class="line">        afterfn.apply( <span class="keyword">this</span>, <span class="built_in">arguments</span> );</div><div class="line">        <span class="keyword">return</span> ret;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> func = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( <span class="number">2</span> );</div><div class="line">&#125;;</div><div class="line"></div><div class="line">func = func.before(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( <span class="number">1</span> );</div><div class="line">&#125;).after(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( <span class="number">3</span> );</div><div class="line">&#125;);</div><div class="line"></div><div class="line">func();</div></pre></td></tr></table></figure>
-<p>函数节流</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> throttle = <span class="function"><span class="keyword">function</span> (<span class="params"> fn, interval </span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> __self = fn,    <span class="comment">// 保存需要被延迟执行的函数引用</span></div><div class="line">        timer,      <span class="comment">// 定时器</span></div><div class="line">        firstTime = <span class="literal">true</span>;    <span class="comment">// 是否是第一次调用</span></div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> args = <span class="built_in">arguments</span>,</div><div class="line">            __me = <span class="keyword">this</span>;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> ( firstTime ) &#123;    <span class="comment">// 如果是第一次调用，不需延迟执行</span></div><div class="line">            __self.apply(__me, args);</div><div class="line">            <span class="keyword">return</span> firstTime = <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> ( timer ) &#123;    <span class="comment">// 如果定时器还在，说明前一次延迟执行还没有完成</span></div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        timer = setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;  <span class="comment">// 延迟一段时间执行</span></div><div class="line">            clearTimeout(timer);</div><div class="line">            timer = <span class="literal">null</span>;</div><div class="line">            __self.apply(__me, args);</div><div class="line"></div><div class="line">        &#125;, interval || <span class="number">500</span> );</div><div class="line"></div><div class="line">    &#125;;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">window</span>.onresize = throttle(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( <span class="number">1</span> );</div><div class="line">&#125;, <span class="number">500</span> );</div></pre></td></tr></table></figure>
+        <p>反柯里化的作用在与扩大函数的适用性，使本来作为特定对象所拥有的功能的函数可以被任意对象所用.<br>即把如下给定的函数签名<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">obj.func(arg1, arg2)</div></pre></td></tr></table></figure></p>
+<p>转化成一个函数形式，签名如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func(obj, arg1, arg2)</div></pre></td></tr></table></figure></p>
+<p>对反柯里化更通俗的解释可以是 函数的借用，是函数能够接受处理其他对象，通过借用泛化、扩大了函数的使用范围。<br>uncurrying更常见的用法是对 Javascript 内置的其他方法的 借调 而不用自己都去实现一遍。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> uncurrying= <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> args=[].slice.call(<span class="built_in">arguments</span>,<span class="number">1</span>);</div><div class="line">        <span class="keyword">return</span> fn.apply(<span class="built_in">arguments</span>[<span class="number">0</span>],args);        </div><div class="line">    &#125;    </div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> test=<span class="string">"a,b,c"</span>;</div><div class="line"><span class="built_in">console</span>.log(test.split(<span class="string">","</span>));</div><div class="line"></div><div class="line"><span class="keyword">var</span> split=uncurrying(<span class="built_in">String</span>.prototype.split);   </div><div class="line"><span class="built_in">console</span>.log(split(test,<span class="string">','</span>));                   <span class="comment">//[ 'a', 'b', 'c' ]</span></div></pre></td></tr></table></figure>
+<p>call<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">return</span> <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>,<span class="number">1</span>,<span class="number">2</span>);</div><div class="line">&#125;</div><div class="line">test([<span class="number">1</span>],<span class="number">2</span>,<span class="number">3</span>)</div><div class="line"><span class="comment">//output</span></div><div class="line">[<span class="number">2</span>]</div></pre></td></tr></table></figure></p>
+<p>apply<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test2</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">return</span> <span class="built_in">Array</span>.prototype.slice.apply(<span class="built_in">arguments</span>,[<span class="number">1</span>,<span class="number">2</span>]);</div><div class="line">&#125;</div><div class="line">test2([<span class="number">1</span>],<span class="number">2</span>,<span class="number">3</span>)</div><div class="line"><span class="comment">//output</span></div><div class="line">[<span class="number">2</span>]</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/06/JavaScript/uncurrying/" data-id="ciss8yuuc001djgqkig8sxxcs" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/uncurrying/">uncurrying</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JavaScript/throttle" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/06/JavaScript/throttle/" class="article-date">
+  <time datetime="2016-09-06T10:36:03.759Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/06/JavaScript/throttle/">函数节流</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>函数被频繁调用的场景<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> throttle = <span class="function"><span class="keyword">function</span> (<span class="params"> fn, interval </span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> __self = fn,    <span class="comment">// 保存需要被延迟执行的函数引用</span></div><div class="line">        timer,      <span class="comment">// 定时器</span></div><div class="line">        firstTime = <span class="literal">true</span>;    <span class="comment">// 是否是第一次调用</span></div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> args = <span class="built_in">arguments</span>,</div><div class="line">            __me = <span class="keyword">this</span>;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> ( firstTime ) &#123;    <span class="comment">// 如果是第一次调用，不需延迟执行</span></div><div class="line">            __self.apply(__me, args);</div><div class="line">            <span class="keyword">return</span> firstTime = <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> ( timer ) &#123;    <span class="comment">// 如果定时器还在，说明前一次延迟执行还没有完成</span></div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        timer = setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;  <span class="comment">// 延迟一段时间执行</span></div><div class="line">            clearTimeout(timer);</div><div class="line">            timer = <span class="literal">null</span>;</div><div class="line">            __self.apply(__me, args);</div><div class="line"></div><div class="line">        &#125;, interval || <span class="number">500</span> );</div><div class="line"></div><div class="line">    &#125;;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">window</span>.onresize = throttle(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( <span class="number">1</span> );</div><div class="line">&#125;, <span class="number">500</span> );</div></pre></td></tr></table></figure></p>
 <p>分时函数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> timeChunk = <span class="function"><span class="keyword">function</span>(<span class="params"> ary, fn, count </span>)</span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> obj,</div><div class="line">        t;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> len = ary.length;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> start = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="built_in">Math</span>.min( count || <span class="number">1</span>, ary.length ); i++ )&#123;</div><div class="line">            <span class="keyword">var</span> obj = ary.shift();</div><div class="line">            fn( obj );</div><div class="line">        &#125;</div><div class="line">     &#125;;</div><div class="line"></div><div class="line">     <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        t = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">          <span class="keyword">if</span> ( ary.length === <span class="number">0</span> )&#123;  <span class="comment">// 如果全部节点都已经被创建好</span></div><div class="line">              <span class="keyword">return</span> clearInterval( t );</div><div class="line">          &#125;</div><div class="line">          start();</div><div class="line">        &#125;, <span class="number">200</span> );    <span class="comment">// 分批执行的时间间隔，也可以用参数的形式传入</span></div><div class="line"></div><div class="line">    &#125;;</div><div class="line"></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p><strong>错误的方法</strong><br>在短时间内往页面中大量添加DOM节点显然也会让浏览器吃不消，我们看到的结果往往就是浏览器的卡顿甚至假死。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ary = [];</div><div class="line"></div><div class="line"><span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">1000</span>; i++ )&#123;</div><div class="line">    ary.push( i );     <span class="comment">// 假设ary装载了1000个好友的数据</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> renderFriendList = <span class="function"><span class="keyword">function</span>(<span class="params"> data </span>)</span>&#123;</div><div class="line">    <span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>, l = data.length; i &lt; l; i++ )&#123;</div><div class="line">        <span class="keyword">var</span> div = <span class="built_in">document</span>.createElement( <span class="string">'div'</span> );</div><div class="line">        div.innerHTML = i;</div><div class="line">        <span class="built_in">document</span>.body.appendChild( div );</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">renderFriendList( ary );</div></pre></td></tr></table></figure></p>
+<p><strong>正确方法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> timeChunk = <span class="function"><span class="keyword">function</span>(<span class="params"> ary, fn, count </span>)</span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> obj,</div><div class="line">        t;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> len = ary.length;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> start = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="built_in">Math</span>.min( count || <span class="number">1</span>, ary.length ); i++ )&#123;</div><div class="line">            <span class="keyword">var</span> obj = ary.shift();</div><div class="line">            fn( obj );</div><div class="line">        &#125;</div><div class="line">     &#125;;</div><div class="line"></div><div class="line">     <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        t = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">          <span class="keyword">if</span> ( ary.length === <span class="number">0</span> )&#123;  <span class="comment">// 如果全部节点都已经被创建好</span></div><div class="line">              <span class="keyword">return</span> clearInterval( t );</div><div class="line">          &#125;</div><div class="line">          start();</div><div class="line">        &#125;, <span class="number">200</span> );    <span class="comment">// 分批执行的时间间隔，也可以用参数的形式传入</span></div><div class="line"></div><div class="line">    &#125;;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"> <span class="keyword">var</span> ary = [];</div><div class="line"></div><div class="line"> <span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">1000</span>; i++ )&#123;</div><div class="line">     ary.push( i );</div><div class="line"> &#125;;</div><div class="line"></div><div class="line"> <span class="keyword">var</span> renderFriendList = timeChunk( ary, <span class="function"><span class="keyword">function</span>(<span class="params"> n </span>)</span>&#123;</div><div class="line">     <span class="keyword">var</span> div = <span class="built_in">document</span>.createElement( <span class="string">'div'</span> );</div><div class="line">     div.innerHTML = n;</div><div class="line">     <span class="built_in">document</span>.body.appendChild( div );</div><div class="line"> &#125;, <span class="number">8</span> );</div><div class="line"></div><div class="line"> renderFriendList();</div></pre></td></tr></table></figure>
 <p>惰性加载函数</p>
-<p>常见的写法</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> addEvent = <span class="function"><span class="keyword">function</span>(<span class="params"> elem, type, handler </span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> ( <span class="built_in">window</span>.addEventListener )&#123;</div><div class="line">       <span class="keyword">return</span> elem.addEventListener( type, handler, <span class="literal">false</span> );</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">if</span> ( <span class="built_in">window</span>.attachEvent )&#123;</div><div class="line">          <span class="keyword">return</span> elem.attachEvent( <span class="string">'on'</span> + type, handler );</div><div class="line">      &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>目前的addEvent函数依然有个缺点，也许我们从头到尾都没有使用过addEvent函数，这样看来，前一次的浏览器嗅探就是完全多余的操作，而且这也会稍稍延长页面ready的时间。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> addEvent = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> ( <span class="built_in">window</span>.addEventListener )&#123;</div><div class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"> elem, type, handler </span>)</span>&#123;</div><div class="line">            elem.addEventListener( type, handler, <span class="literal">false</span> );</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> ( <span class="built_in">window</span>.attachEvent )&#123;</div><div class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"> elem, type, handler </span>)</span>&#123;</div><div class="line">            elem.attachEvent( <span class="string">'on'</span> + type, handler );</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
-<p>惰性</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span>点我绑定事件<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"></div><div class="line">    <span class="keyword">var</span> addEvent = <span class="function"><span class="keyword">function</span>(<span class="params"> elem, type, handler </span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span> ( <span class="built_in">window</span>.addEventListener )&#123;</div><div class="line">           addEvent = <span class="function"><span class="keyword">function</span>(<span class="params"> elem, type, handler </span>)</span>&#123;</div><div class="line">               elem.addEventListener( type, handler, <span class="literal">false</span> );</div><div class="line">           &#125;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> ( <span class="built_in">window</span>.attachEvent )&#123;</div><div class="line">            addEvent = <span class="function"><span class="keyword">function</span>(<span class="params"> elem, type, handler </span>)</span>&#123;</div><div class="line">                elem.attachEvent( <span class="string">'on'</span> + type, handler );</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        addEvent( elem, type, handler );</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">      <span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById( <span class="string">'div1'</span> );</div><div class="line"></div><div class="line">      addEvent( div, <span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">          alert (<span class="number">1</span>);</div><div class="line">      &#125;);</div><div class="line"></div><div class="line">      addEvent( div, <span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">          alert (<span class="number">2</span>);</div><div class="line">      &#125;);</div><div class="line"></div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line">&lt;<span class="regexp">/html&gt;</span></div></pre></td></tr></table></figure>
+<p>这个函数的缺点是，当它每次被调用的时候都会执行里面的if条件分支，虽然执行这些if分支的开销不算大，但也许有一些方法可以让程序避免这些重复的执行过程。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> addEvent = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> ( <span class="built_in">window</span>.addEventListener )&#123;</div><div class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"> elem, type, handler </span>)</span>&#123;</div><div class="line">            elem.addEventListener( type, handler, <span class="literal">false</span> );</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> ( <span class="built_in">window</span>.attachEvent )&#123;</div><div class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"> elem, type, handler </span>)</span>&#123;</div><div class="line">            elem.attachEvent( <span class="string">'on'</span> + type, handler );</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p>目前的addEvent函数依然有个缺点，也许我们从头到尾都没有使用过addEvent函数，这样看来，前一次的浏览器嗅探就是完全多余的操作，而且这也会稍稍延长页面ready的时间。</p>
+<p><strong>惰性载入函数方案</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span>点我绑定事件<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"></div><div class="line">    <span class="keyword">var</span> addEvent = <span class="function"><span class="keyword">function</span>(<span class="params"> elem, type, handler </span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span> ( <span class="built_in">window</span>.addEventListener )&#123;</div><div class="line">           addEvent = <span class="function"><span class="keyword">function</span>(<span class="params"> elem, type, handler </span>)</span>&#123;</div><div class="line">               elem.addEventListener( type, handler, <span class="literal">false</span> );</div><div class="line">           &#125;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> ( <span class="built_in">window</span>.attachEvent )&#123;</div><div class="line">            addEvent = <span class="function"><span class="keyword">function</span>(<span class="params"> elem, type, handler </span>)</span>&#123;</div><div class="line">                elem.attachEvent( <span class="string">'on'</span> + type, handler );</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        addEvent( elem, type, handler );</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">      <span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById( <span class="string">'div1'</span> );</div><div class="line"></div><div class="line">      addEvent( div, <span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">          alert (<span class="number">1</span>);</div><div class="line">      &#125;);</div><div class="line"></div><div class="line">      addEvent( div, <span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">          alert (<span class="number">2</span>);</div><div class="line">      &#125;);</div><div class="line"></div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>此时addEvent依然被声明为一个普通函数，在函数里依然有一些分支判断。但是在第一次进入条件分支之后，在函数内部会重写这个函数，重写之后的函数就是我们期望的addEvent函数，在下一次进入addEvent函数的时候，addEvent函数里不再存在条件分支语句</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/JavaScript/Higher - Order Functions /" data-id="ciss78ktw000iywqk5a1j1vki" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/06/JavaScript/throttle/" data-id="ciss8yutx001ajgqk2rnjftiu" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Closures/">Closures</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/onresize/">onresize</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/setTimeout/">setTimeout</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript/currying" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/06/JavaScript/currying/" class="article-date">
-  <time datetime="2016-09-06T10:36:03.752Z" itemprop="datePublished">2016-09-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/06/JavaScript/currying/">柯里化-高价函数应用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>何为Curry化/柯里化？  </p>
-<p>curry化来源与数学家 Haskell Curry的名字 （编程语言 Haskell也是以他的名字命名）。</p>
-<p>柯里化通常也称部分求值，其含义是给函数分步传递参数，每次传递参数后部分应用参数，并返回一个更具体的函数接受剩下的参数，这中间可嵌套多层这样的接受部分参数函数，直至返回最后结果。</p>
-<p>因此柯里化的过程是逐步传参，逐步缩小函数的适用范围，逐步求解的过程。</p>
-<p>柯里化的基础</p>
-<p>上面的代码其实是一个高阶函数（high-order function）, 高阶函数是指操作函数的函数，它接收一个或者多个函数作为参数，并返回一个新函数。此外，还依赖与闭包的特性，来保存中间过程中输入的参数。即：</p>
-<ol>
-<li>函数可以作为参数传递</li>
-<li>函数能够作为函数的返回值</li>
-<li>闭包</li>
-</ol>
-<p>柯里化的作用</p>
-<ol>
-<li>延迟计算。上面的例子已经比较好低说明了。</li>
-<li>参数复用。当在多次调用同一个函数，并且传递的参数绝大多数是相同的，那么该函数可能是一个很好的柯里化候选。</li>
-<li>动态创建函数。这可以是在部分计算出结果后，在此基础上动态生成新的函数处理后面的业务，这样省略了重复计算。或者可以通过将要传入调用函数的参数子集，部分应用到函数中，从而动态创造出一个新函数，这个新函数保存了重复传入的参数（以后不必每次都传）。例如，事件浏览器添加事件的辅助方法：</li>
-</ol>
-<p>柯里化实现</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> adder = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> _args = [];</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (<span class="built_in">arguments</span>.length === <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">return</span> _args.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</div><div class="line">                <span class="keyword">return</span> a + b;</div><div class="line">            &#125;);</div><div class="line">        &#125;</div><div class="line">        [].push.apply(_args, [].slice.call(<span class="built_in">arguments</span>));</div><div class="line">        <span class="keyword">return</span> <span class="built_in">arguments</span>.callee;</div><div class="line">    &#125;</div><div class="line">&#125;;    </div><div class="line"><span class="keyword">var</span> sum = adder();</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(sum);     <span class="comment">// Function</span></div><div class="line"></div><div class="line">sum(<span class="number">100</span>,<span class="number">200</span>)(<span class="number">300</span>);    <span class="comment">// 调用形式灵活，一次调用可输入一个或者多个参数，并且支持链式调用</span></div><div class="line">sum(<span class="number">400</span>);</div><div class="line"><span class="built_in">console</span>.log(sum());   <span class="comment">// 1000 （加总计算）</span></div></pre></td></tr></table></figure>
-<p>通用的柯里化函数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> currying = <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> _args = [];</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (<span class="built_in">arguments</span>.length === <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">return</span> fn.apply(<span class="keyword">this</span>, _args);</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">Array</span>.prototype.push.apply(_args, [].slice.call(<span class="built_in">arguments</span>));</div><div class="line">        <span class="keyword">return</span> <span class="built_in">arguments</span>.callee;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> multi=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> total = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, c; c = <span class="built_in">arguments</span>[i++];) &#123;</div><div class="line">        total += c;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> total;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> sum = currying(multi);  </div><div class="line">  </div><div class="line">sum(<span class="number">100</span>,<span class="number">200</span>)(<span class="number">300</span>);</div><div class="line">sum(<span class="number">400</span>);</div><div class="line"><span class="built_in">console</span>.log(sum());     <span class="comment">// 1000  （空白调用时才真正计算）</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> addEvent = <span class="function"><span class="keyword">function</span>(<span class="params"> elem, type, handler </span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span> ( <span class="built_in">window</span>.addEventListener )&#123;</div><div class="line">           addEvent = <span class="function"><span class="keyword">function</span>(<span class="params"> elem, type, handler </span>)</span>&#123;</div><div class="line">               elem.addEventListener( type, handler, <span class="literal">false</span> );</div><div class="line">           &#125;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> ( <span class="built_in">window</span>.attachEvent )&#123;</div><div class="line">            addEvent = <span class="function"><span class="keyword">function</span>(<span class="params"> elem, type, handler </span>)</span>&#123;</div><div class="line">                elem.attachEvent( <span class="string">'on'</span> + type, handler );</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        addEvent( elem, type, handler );</div><div class="line">    &#125;;</div></pre></td></tr></table></figure>
-<p>Function.prototype.bind 方法也是柯里化应用</p>
-<p>与 call/apply 方法直接执行不同，bind 方法 将第一个参数设置为函数执行的上下文，其他参数依次传递给调用方法（函数的主体本身不执行，可以看成是延迟执行），并动态创建返回一个新的函数， 这符合柯里化特点。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> foo = &#123;x: <span class="number">888</span>&#125;;</div><div class="line"><span class="keyword">var</span> bar = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.x);</div><div class="line">&#125;.bind(foo);               <span class="comment">// 绑定</span></div><div class="line">bar();   <span class="comment">// 888</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> bar = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.x);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> foo = &#123;x: <span class="number">888</span>&#125;;</div><div class="line"><span class="built_in">Function</span>.prototype.testBind = <span class="function"><span class="keyword">function</span> (<span class="params">scope</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> fn = <span class="keyword">this</span>;                    <span class="comment">//// this 指向的是调用 testBind 方法的一个函数， </span></div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> fn.apply(scope);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> testBindBar = bar.testBind(foo);  <span class="comment">// 绑定 foo，延迟执行</span></div><div class="line"><span class="built_in">console</span>.log(testBindBar);             <span class="comment">// Function (可见，bind之后返回的是一个延迟执行的新函数)</span></div><div class="line">testBindBar();                          <span class="comment">// 888</span></div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/JavaScript/currying/" data-id="ciss78kua000wywqk5cgrof8b" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/currying/">currying</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript/Closures" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/06/JavaScript/Closures/" class="article-date">
-  <time datetime="2016-09-06T10:36:03.751Z" itemprop="datePublished">2016-09-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/06/JavaScript/Closures/">闭包实例</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>详见：Closures](<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures</a>)</p>
-<p>example1<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//非闭包</span></div><div class="line"><span class="keyword">var</span> cache = &#123;&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> mult = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.join.call( <span class="built_in">arguments</span>, <span class="string">','</span> );</div><div class="line">    <span class="keyword">if</span> ( cache[ args ] )&#123;</div><div class="line">        <span class="keyword">return</span> cache[ args ];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>, l = <span class="built_in">arguments</span>.length; i &lt; l; i++ )&#123;</div><div class="line">        a = a * <span class="built_in">arguments</span>[i];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> cache[ args ] = a;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">alert ( mult( <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span> ) );     <span class="comment">// 输出：6</span></div><div class="line">alert ( mult( <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span> ) );     <span class="comment">// 输出：6</span></div><div class="line"></div><div class="line"><span class="comment">//闭包</span></div><div class="line"><span class="keyword">var</span> mult = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> cache = &#123;&#125;;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.join.call( <span class="built_in">arguments</span>, <span class="string">','</span> );</div><div class="line">        <span class="keyword">if</span> ( args <span class="keyword">in</span> cache )&#123;</div><div class="line">            <span class="keyword">return</span> cache[ args ];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>, l = <span class="built_in">arguments</span>.length; i &lt; l; i++ )&#123;</div><div class="line">            a = a * <span class="built_in">arguments</span>[i];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> cache[ args ] = a;</div><div class="line">    &#125;</div><div class="line">&#125;)();</div><div class="line"></div><div class="line"><span class="comment">//闭包提炼</span></div><div class="line"><span class="keyword">var</span> mult = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> cache = &#123;&#125;;</div><div class="line">    <span class="keyword">var</span> calculate = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;   <span class="comment">// 封闭calculate函数</span></div><div class="line">        <span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>, l = <span class="built_in">arguments</span>.length; i &lt; l; i++ )&#123;</div><div class="line">            a = a * <span class="built_in">arguments</span>[i];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> a;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.join.call( <span class="built_in">arguments</span>, <span class="string">','</span> );</div><div class="line">        <span class="keyword">if</span> ( args <span class="keyword">in</span> cache )&#123;</div><div class="line">            <span class="keyword">return</span> cache[ args ];</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> cache[ args ] = calculate.apply( <span class="literal">null</span>, <span class="built_in">arguments</span> );</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
-<p>example2<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">var</span> report = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> imgs = [];</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"> src </span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> img = <span class="keyword">new</span> Image();</div><div class="line">        imgs.push( img );</div><div class="line">        img.src = src;</div><div class="line">    &#125;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Extent = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.value = <span class="number">0</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">Extent.prototype.call = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.value++;</div><div class="line">    <span class="built_in">console</span>.log( <span class="keyword">this</span>.value );</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> extent = <span class="keyword">new</span> Extent();</div><div class="line"></div><div class="line">extent.call();</div><div class="line">extent.call();</div><div class="line">extent.call();</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Tv = &#123;</div><div class="line">    open: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log( <span class="string">'打开电视机'</span> );</div><div class="line">    &#125;,</div><div class="line">    close: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log( <span class="string">'关上电视机'</span> );</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> createCommand = <span class="function"><span class="keyword">function</span>(<span class="params"> receiver </span>)</span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> execute = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> receiver.open();    <span class="comment">// 执行命令，打开电视机</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> undo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> receiver.close();    <span class="comment">// 执行命令，关闭电视机</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        execute: execute,</div><div class="line">        undo: undo</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> setCommand = <span class="function"><span class="keyword">function</span>(<span class="params"> command </span>)</span>&#123;</div><div class="line">    <span class="built_in">document</span>.getElementById( <span class="string">'execute'</span> ).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        command.execute();     <span class="comment">// 输出：打开电视机</span></div><div class="line">    &#125;</div><div class="line">    <span class="built_in">document</span>.getElementById( <span class="string">'undo'</span> ).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        command.undo();    <span class="comment">// 输出：关闭电视机</span></div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">setCommand( createCommand( Tv ) );</div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/JavaScript/Closures/" data-id="ciss78ktz000lywqkf6gfeb6g" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Closures/">Closures</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript/clone" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/06/JavaScript/clone/" class="article-date">
-  <time datetime="2016-09-06T10:36:03.750Z" itemprop="datePublished">2016-09-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/06/JavaScript/clone/">克隆对象</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>在JavaScript语言中不存在类的概念，对象也并非从类中创建出来的，所有的JavaScript对象都是从某个对象上克隆而来的。</p>
-<p>原型模式的实现关键，是语言本身是否提供了clone方法。ECMAScript 5提供了Object.create方法，可以用来克隆对象。代码如下：</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Plane = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.blood = <span class="number">100</span>;</div><div class="line">    <span class="keyword">this</span>.attackLevel = <span class="number">1</span>;</div><div class="line">    <span class="keyword">this</span>.defenseLevel = <span class="number">1</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> plane = <span class="keyword">new</span> Plane();</div><div class="line">plane.blood = <span class="number">500</span>;</div><div class="line">plane.attackLevel = <span class="number">10</span>;</div><div class="line">plane.defenseLevel = <span class="number">7</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> clonePlane = <span class="built_in">Object</span>.create( plane );</div><div class="line"><span class="built_in">console</span>.log( clonePlane.blood )         <span class="comment">// 输出 500</span></div><div class="line"><span class="built_in">console</span>.log( clonePlane.attackLevel )   <span class="comment">// 输出 10</span></div><div class="line"><span class="built_in">console</span>.log( clonePlane.defenseLevel )  <span class="comment">// 输出 7</span></div></pre></td></tr></table></figure>
-<p>在不支持Object.create方法的浏览器中，则可以使用以下代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.create = <span class="built_in">Object</span>.create || <span class="function"><span class="keyword">function</span>(<span class="params"> obj </span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">    F.prototype = obj;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> F();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/JavaScript/clone/" data-id="ciss78kud000yywqk49awrpg2" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Object-create/">Object.create</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/clone/">clone</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript/apply" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/06/JavaScript/apply/" class="article-date">
-  <time datetime="2016-09-06T10:36:03.748Z" itemprop="datePublished">2016-09-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/06/JavaScript/apply/">apply(),call()</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>详见：<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply" target="_blank" rel="external">Function.prototype.apply()</a>,<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call" target="_blank" rel="external">Function.prototype.call()</a>,<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind" target="_blank" rel="external">Function.prototype.bind()</a></p>
-<p>apply() 方法在指定 this 值和参数（参数以数组或类数组对象的形式存在）的情况下调用某个函数。</p>
-<p>该函数的语法与 call() 方法的语法几乎完全相同，唯一的区别在于，call()方法接受的是一个参数列表，而 apply()方法接受的是一个包含多个参数的数组（或类数组对象）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* min/max number in an array */</span></div><div class="line"><span class="keyword">var</span> numbers = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">7</span>];</div><div class="line"></div><div class="line"><span class="comment">/* using Math.min/Math.max apply */</span></div><div class="line"><span class="keyword">var</span> max = <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, numbers); <span class="comment">/* This about equal to Math.max(numbers[0], ...) or Math.max(5, 6, ..) */</span></div><div class="line"><span class="keyword">var</span> min = <span class="built_in">Math</span>.min.apply(<span class="literal">null</span>, numbers);</div><div class="line"></div><div class="line"><span class="comment">/* vs. simple loop based algorithm */</span></div><div class="line">max = -<span class="literal">Infinity</span>, min = +<span class="literal">Infinity</span>;</div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; numbers.length; i++) &#123;</div><div class="line">  <span class="keyword">if</span> (numbers[i] &gt; max)</div><div class="line">    max = numbers[i];</div><div class="line">  <span class="keyword">if</span> (numbers[i] &lt; min) </div><div class="line">    min = numbers[i];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>但是当心：如果用上面的方式调用 apply, 你很可能会遇到方法参数个数越界的问题. 当你对一个方法传入非常多的参数 (比如超过1W多个参数) 时, 就非常有可能会导致越界问题, 这个临界值是根据不同的 JavaScript 引擎而定的 (JavaScript 核心中已经做了硬编码  参数个数限制在65536)，因为这个限制(实际上也是任何用到超大栈空间的行为的自然表现)是未指定的. 有些引擎会抛出异常.  更糟糕的是其他引擎会直接限制传入到方法的参数个数，导致参数丢失. (举个例子: 如果某个引擎限制了方法参数最多为4个 [实际真正的参数个数限制当然要高得多了, 这里只是打个比方], 上面的代码中, 真正通过 apply 传到目标方法中的参数为 5, 6, 2, 3, 而不是完整的 numbers 数组.) 如果你的参数数组可能非常大, 那么推荐使用下面这种策略来处理: 将参数数组切块后循环传入目标方法:</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">minOfArray</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> min = <span class="literal">Infinity</span>;</div><div class="line">  <span class="keyword">var</span> QUANTUM = <span class="number">32768</span>;</div><div class="line"></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i += QUANTUM) &#123;</div><div class="line">    <span class="keyword">var</span> submin = <span class="built_in">Math</span>.min.apply(<span class="literal">null</span>, arr.slice(i, <span class="built_in">Math</span>.min(i + QUANTUM, len)));</div><div class="line">    min = <span class="built_in">Math</span>.min(submin, min);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> min;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> min = minOfArray([<span class="number">5</span>, <span class="number">6</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">7</span>]);</div></pre></td></tr></table></figure>
-<p>语法<br>fun.apply(thisArg[, argsArray])<br>参数</p>
-<p>thisArg<br>在 fun 函数运行时指定的 this 值。需要注意的是，指定的 this 值并不一定是该函数执行时真正的 this 值，如果这个函数处于非严格模式下，则指定为 null 或 undefined 时会自动指向全局对象（浏览器中就是window对象），同时值为原始值（数字，字符串，布尔值）的 this 会指向该原始值的自动包装对象。<br>argsArray<br>一个数组或者类数组对象，其中的数组元素将作为单独的参数传给 fun 函数。如果该参数的值为null 或 undefined，则表示不需要传入任何参数。从ECMAScript 5 开始可以使用类数组对象。浏览器兼容性请参阅本文底部内容。</p>
-<p>描述<br>在调用一个存在的函数时，你可以为其指定一个 this 对象。 this 指当前对象，也就是正在调用这个函数的对象。 使用 apply， 你可以只写一次这个方法然后在另一个对象中继承它，而不用在新对象中重复写该方法。</p>
-<p>apply 与 call() 非常相似，不同之处在于提供参数的方式。apply 使用参数数组而不是一组参数列表（原文：a named set of parameters）。apply 可以使用数组字面量（array literal），如 fun.apply(this, [‘eat’, ‘bananas’])，或数组对象， 如  fun.apply(this, new Array(‘eat’, ‘bananas’))。</p>
-<p>你也可以使用 arguments  对象作为 argsArray 参数。 arguments 是一个函数的局部变量。 它可以被用作被调用对象的所有未指定的参数。 这样，你在使用apply函数的时候就不需要知道被调用对象的所有参数。 你可以使用arguments来把所有的参数传递给被调用对象。 被调用对象接下来就负责处理这些参数。</p>
-<p>从 ECMAScript 第5版开始，可以使用任何种类的类数组对象，就是说只要有一个 length 属性和[0…length) 范围的整数属性。例如现在可以使用 NodeList 或一个自己定义的类似 {‘length’: 2, ‘0’: ‘eat’, ‘1’: ‘bananas’} 形式的对象。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">Array</span>.prototype.push.call( <span class="built_in">arguments</span>, <span class="number">4</span> );    <span class="comment">// arguments借用Array.prototype.push方法</span></div><div class="line">    <span class="built_in">console</span>.log( <span class="built_in">arguments</span> );      <span class="comment">// 输出：[1, 2, 3, 4]</span></div><div class="line">&#125;)( <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> );</div></pre></td></tr></table></figure>
-<p>Function.prototype.bind()</p>
-<p>bind()方法会创建一个新函数，当这个新函数被调用时，它的this值是传递给bind()的第一个参数, 它的参数是bind()的其他参数和其原本的参数.</p>
-<p>语法<br>fun.bind(thisArg[, arg1[, arg2[, …]]])<br>参数  </p>
-<p>thisArg<br>当绑定函数被调用时，该参数会作为原函数运行时的 this 指向。当使用new 操作符调用绑定函数时，该参数无效。<br>arg1, arg2, …<br>当绑定函数被调用时，这些参数加上绑定函数本身的参数会按照顺序作为原函数运行时的参数。</p>
-<p>描述<br>bind() 函数会创建一个新函数（称为绑定函数），新函数与被调函数（绑定函数的目标函数）具有相同的函数体（在 ECMAScript 5 规范中内置的call属性）。当目标函数被调用时 this 值绑定到 bind() 的第一个参数，该参数不能被重写。绑定函数被调用时，bind() 也接受预设的参数提供给原函数。一个绑定函数也能使用new操作符创建对象：这种行为就像把原函数当成构造器。提供的 this 值被忽略，同时调用时的参数被提供给模拟函数。</p>
-<p>示例<br>创建绑定函数  </p>
-<p>bind() 最简单的用法是创建一个函数，使这个函数不论怎么调用都有同样的 this 值。JavaScript新手经常犯的一个错误是将一个方法从对象中拿出来，然后再调用，希望方法中的 this 是原来的对象。（比如在回调中传入这个方法。）如果不做特殊处理的话，一般会丢失原来的对象。从原来的函数和原来的对象创建一个绑定函数，则能很漂亮地解决这个问题：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.x = <span class="number">9</span>; </div><div class="line"><span class="keyword">var</span> <span class="built_in">module</span> = &#123;</div><div class="line">  x: <span class="number">81</span>,</div><div class="line">  getX: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>.x; &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.getX(); <span class="comment">// 81</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> retrieveX = <span class="built_in">module</span>.getX;</div><div class="line">retrieveX(); <span class="comment">// 9, because in this case, "this" refers to the global object</span></div><div class="line"></div><div class="line"><span class="comment">// Create a new function with 'this' bound to module</span></div><div class="line"><span class="comment">//New programmers (like myself) might confuse the global var getX with module's property getX</span></div><div class="line"><span class="keyword">var</span> boundGetX = retrieveX.bind(<span class="built_in">module</span>);</div><div class="line">boundGetX(); <span class="comment">// 81</span></div></pre></td></tr></table></figure>
-<p>分离函数（Partial Functions）</p>
-<p>bind()的另一个最简单的用法是使一个函数拥有预设的初始参数。这些参数（如果有的话）作为bind()的第二个参数跟在this（或其他对象）后面，之后它们会被插入到目标函数的参数列表的开始位置，传递给绑定函数的参数会跟在它们的后面。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">list</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> list1 = list(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>); <span class="comment">// [1, 2, 3]</span></div><div class="line"></div><div class="line"><span class="comment">// Create a function with a preset leading argument</span></div><div class="line"><span class="keyword">var</span> leadingThirtysevenList = list.bind(<span class="literal">undefined</span>, <span class="number">37</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> list2 = leadingThirtysevenList(); <span class="comment">// [37]</span></div><div class="line"><span class="keyword">var</span> list3 = leadingThirtysevenList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>); <span class="comment">// [37, 1, 2, 3]</span></div></pre></td></tr></table></figure>
-<p>配合 setTimeout</p>
-<p>在默认情况下，使用 window.setTimeout() 时，this 关键字会指向 window （或全局）对象。当使用类的方法时，需要 this 引用类的实例，你可能需要显式地把 this 绑定到回调函数以便继续使用实例。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">LateBloomer</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.petalCount = <span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random() * <span class="number">12</span>) + <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// Declare bloom after a delay of 1 second</span></div><div class="line">LateBloomer.prototype.bloom = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">window</span>.setTimeout(<span class="keyword">this</span>.declare.bind(<span class="keyword">this</span>), <span class="number">1000</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">LateBloomer.prototype.declare = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'I am a beautiful flower with '</span> +</div><div class="line">    <span class="keyword">this</span>.petalCount + <span class="string">' petals!'</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> flower = <span class="keyword">new</span> LateBloomer();</div><div class="line">flower.bloom();  <span class="comment">// 一秒钟后, 调用'declare'方法</span></div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/JavaScript/apply/" data-id="ciss78ku3000qywqkfgvxeuty" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apply/">apply()</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bind/">bind()</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/call/">call()</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-concepts" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/06/concepts/" class="article-date">
-  <time datetime="2016-09-06T10:36:03.746Z" itemprop="datePublished">2016-09-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/06/concepts/">概念</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>客户端</strong><br>HTML、CSS、JavaScript。</p>
-<p><strong>服务端</strong><br>PHP、ASP.NET、Node.js、Ruby on Rails、Java、Go，等等。</p>
-<p><strong><a href="http://www.iana.org/assignments/media-types/media-types.xhtml" target="_blank" rel="external">媒体类型</a></strong><br>当你在传递数据时，需要提前告知接收方数据是什么类型，这就会涉及媒体类型。媒体类型也有一些你可能听过的其他称呼，如“互联网媒体类型”“内容类型”或“MIME 类型”。它使用“类型 / 子类型”这种格式来表示，比如你可能见过的 text/html。</p>
-<p><strong>抽象化</strong><br>一种处理复杂系统的技术，主要思想是将一个大问题转换为多个小问题。  </p>
-<p><strong>框架</strong><br>一种能够节约时间，以让我们更专注于构建功能的抽象化工具。</p>
-<blockquote>
-<p>如果我们是使用 JavaScript 建房子的商人，那么 JavaScript 框架就像是已经准备好水暖和供电的毛坯房。有了它，我们可以更加专注于为厨房选取怎样的水池，而只要把现成的管道与水池相连接，就能获取自来水了。我们也可以专注于安装漂亮的橱柜和花岗岩台面了。本质上讲，JavaScript 框架可以节省时间，让我们更专注于功能的构建。  </p>
-</blockquote>
-<p><strong>单页 Web 应用</strong><br>与传统的多页方式不同的，着力于提供更加无缝的应用体验的网页。  </p>
-<p><strong>模型 - 视图 - 控制器（MVC）</strong><br>一种应用架构模式，它将应用分为三部分：模型（数据）、视图（展示）以及控制器（更新模型和视图）  </p>
-<p><strong>关系型数据库</strong><br>一种将存储的数据用可以辨识的关系进行结构化存储的数据库。</p>
-<p><strong>NoSQL 数据库</strong><br>一种不通过存储数据间的关系来存储的数据库。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/concepts/" data-id="ciss78krp0000ywqkqdt5qihi" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/concept/">concept</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/library/">library</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/06/hello-world/" class="article-date">
-  <time datetime="2016-09-06T10:35:01.317Z" itemprop="datePublished">2016-09-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/06/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/hello-world/" data-id="ciss78krx0001ywqky5r0aejz" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
@@ -571,7 +568,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -581,7 +578,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/animation/">animation</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/animation/">animation</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/events/">events</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/events/HTML-DOM-events/">HTML DOM events</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mobile/">mobile</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/svg/">svg</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li></ul>
     </div>
   </div>
 
@@ -591,7 +588,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Closures/">Closures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Object-create/">Object.create</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/animation/">animation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apply/">apply()</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bind/">bind()</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call/">call()</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/clone/">clone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/concept/">concept</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/config/">config</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/currying/">currying</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/library/">library</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onresize/">onresize</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/polymorphism/">polymorphism</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/position/">position</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setTimeout/">setTimeout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uncurrying/">uncurrying</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Animation-performance/">Animation performance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Closures/">Closures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Content-type/">Content-type</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOMContentLoaded/">DOMContentLoaded</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Object-create/">Object.create</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/animation/">animation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/animation-library/">animation library</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apply/">apply()</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bind/">bind()</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call/">call()</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/clone/">clone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/concept/">concept</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/config/">config</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/currying/">currying</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/library/">library</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/load/">load</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onresize/">onresize</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/picture-compression/">picture compression</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/polymorphism/">polymorphism</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/position/">position</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setTimeout/">setTimeout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svg/">svg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tap/">tap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transition/">transition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uncurrying/">uncurrying</a></li></ul>
     </div>
   </div>
 
@@ -601,7 +598,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Closures/" style="font-size: 15px;">Closures</a> <a href="/tags/JSON/" style="font-size: 20px;">JSON</a> <a href="/tags/Object-create/" style="font-size: 10px;">Object.create</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/apply/" style="font-size: 10px;">apply()</a> <a href="/tags/bind/" style="font-size: 10px;">bind()</a> <a href="/tags/call/" style="font-size: 10px;">call()</a> <a href="/tags/clone/" style="font-size: 10px;">clone</a> <a href="/tags/concept/" style="font-size: 10px;">concept</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/currying/" style="font-size: 10px;">currying</a> <a href="/tags/library/" style="font-size: 10px;">library</a> <a href="/tags/onresize/" style="font-size: 10px;">onresize</a> <a href="/tags/polymorphism/" style="font-size: 10px;">polymorphism</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/setTimeout/" style="font-size: 10px;">setTimeout</a> <a href="/tags/uncurrying/" style="font-size: 10px;">uncurrying</a>
+      <a href="/tags/Animation-performance/" style="font-size: 10px;">Animation performance</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Closures/" style="font-size: 15px;">Closures</a> <a href="/tags/Content-type/" style="font-size: 10px;">Content-type</a> <a href="/tags/DOMContentLoaded/" style="font-size: 10px;">DOMContentLoaded</a> <a href="/tags/JSON/" style="font-size: 20px;">JSON</a> <a href="/tags/Object-create/" style="font-size: 10px;">Object.create</a> <a href="/tags/animation/" style="font-size: 20px;">animation</a> <a href="/tags/animation-library/" style="font-size: 10px;">animation library</a> <a href="/tags/apply/" style="font-size: 15px;">apply()</a> <a href="/tags/bind/" style="font-size: 15px;">bind()</a> <a href="/tags/call/" style="font-size: 15px;">call()</a> <a href="/tags/clone/" style="font-size: 10px;">clone</a> <a href="/tags/concept/" style="font-size: 10px;">concept</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/currying/" style="font-size: 10px;">currying</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/library/" style="font-size: 10px;">library</a> <a href="/tags/load/" style="font-size: 10px;">load</a> <a href="/tags/onresize/" style="font-size: 10px;">onresize</a> <a href="/tags/picture-compression/" style="font-size: 10px;">picture compression</a> <a href="/tags/polymorphism/" style="font-size: 10px;">polymorphism</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/setTimeout/" style="font-size: 10px;">setTimeout</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tap/" style="font-size: 10px;">tap</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/uncurrying/" style="font-size: 10px;">uncurrying</a>
     </div>
   </div>
 
@@ -623,23 +620,23 @@
       <ul>
         
           <li>
-            <a href="/2016/09/06/animation/theory/">概念</a>
+            <a href="/2016/09/14/animation/css3/">css过渡、动画和变换</a>
           </li>
         
           <li>
-            <a href="/2016/09/06/JSON/JSON tools/">格式化和验证JSON的工具</a>
+            <a href="/2016/09/14/mobile/tap/">轻触tap</a>
           </li>
         
           <li>
-            <a href="/2016/09/06/JSON/JSON in Visual drag and drop/">可视化数据中的JSON数据交换</a>
+            <a href="/2016/09/09/JavaScript/CommonlyUsedFunction/">常用函数</a>
           </li>
         
           <li>
-            <a href="/2016/09/06/JSON/JSON in PHP/">PHP中的JSON</a>
+            <a href="/2016/09/09/animation/performance/">动画性能</a>
           </li>
         
           <li>
-            <a href="/2016/09/06/JSON/JSON in Node.js/">Node.js中的JSON</a>
+            <a href="/2016/09/09/svg/reference/">SVG</a>
           </li>
         
       </ul>
