@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>css transform2D vs transform3D变换 | 闪阳的web之旅</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="硬件加速的极限当浏览器决定一个元素应当使用硬件来加速时，它不能把原生的DOM元素传给GPU。相反，它将元素呈现到一个图片中，并向GPU发送图像。GPU将图像应用为多边形纹理贴图来代表元素。然后GPU可以非常迅速地移动这些多边形。如果位图有透明信息（Alpha通道），该元素就能部分透明。GPU还可以缩放元素、旋转或原声地应用变换。它不能重新渲染内容。一旦元素被发送到GPU，它只能是一个图像内容，而不">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css transform2D vs transform3D变换">
+<meta property="og:url" content="http://yoursite.com/2016/09/18/css/transform/index.html">
+<meta property="og:site_name" content="闪阳的web之旅">
+<meta property="og:description" content="硬件加速的极限当浏览器决定一个元素应当使用硬件来加速时，它不能把原生的DOM元素传给GPU。相反，它将元素呈现到一个图片中，并向GPU发送图像。GPU将图像应用为多边形纹理贴图来代表元素。然后GPU可以非常迅速地移动这些多边形。如果位图有透明信息（Alpha通道），该元素就能部分透明。GPU还可以缩放元素、旋转或原声地应用变换。它不能重新渲染内容。一旦元素被发送到GPU，它只能是一个图像内容，而不">
+<meta property="og:image" content="http://yoursite.com/images/css3/transform2dcompare.png">
+<meta property="og:image" content="http://yoursite.com/images/css3/transform3dcompare.png">
+<meta property="og:updated_time" content="2016-09-18T07:17:30.198Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css transform2D vs transform3D变换">
+<meta name="twitter:description" content="硬件加速的极限当浏览器决定一个元素应当使用硬件来加速时，它不能把原生的DOM元素传给GPU。相反，它将元素呈现到一个图片中，并向GPU发送图像。GPU将图像应用为多边形纹理贴图来代表元素。然后GPU可以非常迅速地移动这些多边形。如果位图有透明信息（Alpha通道），该元素就能部分透明。GPU还可以缩放元素、旋转或原声地应用变换。它不能重新渲染内容。一旦元素被发送到GPU，它只能是一个图像内容，而不">
+<meta name="twitter:image" content="http://yoursite.com/images/css3/transform2dcompare.png">
+  
+    <link rel="alternate" href="/atom.xml" title="闪阳的web之旅" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">闪阳的web之旅</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">科技并不仅限于计算机，任何可以使事情更易完成的方法都是科技。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-css/transform" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/18/css/transform/" class="article-date">
+  <time datetime="2016-09-18T07:17:30.197Z" itemprop="datePublished">2016-09-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/css/">css</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      css transform2D vs transform3D变换
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="硬件加速的极限"><a href="#硬件加速的极限" class="headerlink" title="硬件加速的极限"></a>硬件加速的极限</h5><p>当浏览器决定一个元素应当使用硬件来加速时，它不能把原生的DOM元素传给GPU。相反，它将元素呈现到一个图片中，并向GPU发送图像。GPU将图像应用为多边形纹理贴图来代表元素。然后GPU可以非常迅速地移动这些多边形。如果位图有透明信息（Alpha通道），该元素就能部分透明。GPU还可以缩放元素、旋转或原声地应用变换。它不能重新渲染内容。一旦元素被发送到GPU，它只能是一个图像内容，而不是实际的内容。</p>
+<p><em>比较2D变换与3D变换</em><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">h1 &#123;</div><div class="line">	width: 50px;</div><div class="line">	border: 1px solid black;</div><div class="line">	margin: 100px 0px;</div><div class="line">	text-align: center;</div><div class="line">	font-size: 32px;</div><div class="line">	transform: scale(3);</div><div class="line">&#125;</div><div class="line">.blurry &#123;</div><div class="line">	 transform: scale3d(3,3,1);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>o<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"blurry"</span>&gt;</span>o<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><img src="/images/css3/transform2dcompare.png" alt="transform2d"><br><img src="/images/css3/transform3dcompare.png" alt="transform3d"></p>
+<p>由于2D变换不需要渲染图像，浏览器能够以较大的尺寸重新渲染文本。CPU只有图像可供操作，所以它只能按比例放大图像，从而得到一个模糊的版本。<br>要解决这个限制，一旦动画完成，我们可以“净化”变换的元素。除非我真的要做一些3D效果，否则可以在动画完成时，通过在触发<br>transitionend或animationend事件时改变样式，将3D变换转换回2D变换。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">#zoomer&#123;</div><div class="line">	font-size:24px;</div><div class="line">	position:absolute;</div><div class="line">	top:50px;</div><div class="line">	left:100px;</div><div class="line">	background:green;</div><div class="line">	transition:transform .2s ease-in-out;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>click me!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">"zoomer"</span>&gt;</span>click meo!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> TRANSFORM_PROPERTY, TRANSFORM_END;</div><div class="line">	<span class="keyword">if</span>( <span class="keyword">typeof</span> <span class="built_in">document</span>.body.style.webkitTransform )&#123;</div><div class="line">		TRANSFORM_PROPERTY = <span class="string">'webkitTransform'</span>;</div><div class="line">		TRANSFORM_END = <span class="string">'webkitTransformend'</span>;</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		TRANSFORM_PROPERTY = <span class="string">'transform'</span>;</div><div class="line">		TRANSFORM_END = <span class="string">'transformend'</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">embiggen</span>(<span class="params">element</span>)</span>&#123;</div><div class="line">		element.addEventListener(TRANSFORM_END, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">			element.style[TRANSFORM_PROPERTY] = <span class="string">'scale(3)'</span>;</div><div class="line">		&#125;)</div><div class="line">		element.style[TRANSFORM_PROPERTY] = <span class="string">'scale3d(3,3,1)'</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">var</span> z = <span class="built_in">document</span>.getElementById(<span class="string">'zoomer'</span>);</div><div class="line">	z.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">		embiggen(z);</div><div class="line">	&#125;)</div><div class="line">&#125;)()</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>净化变换还有一个好处：释放GPU占用的内存。<br>如果你应用了多个变换，最好在DOM外保持元素的状态，这样你无需再次从DOM树中读取元素。<br>（意为在JavaScript变量中保存该DOM或其相关属性）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/18/css/transform/" data-id="cit9o6cnx0000xkqkror2xhj4" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/transform/">transform</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/09/18/JavaScript/js&style/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          JavaScript征服Style的五种武器
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/18/animation/css3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">css过渡、动画和变换</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categorieën</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Underscore/">Underscore</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/animation/">animation</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/events/">events</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/events/HTML-DOM-events/">HTML DOM events</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mobile/">mobile</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/svg/">svg</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Labels</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Animation-performance/">Animation performance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Closures/">Closures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Content-type/">Content-type</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOMContentLoaded/">DOMContentLoaded</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Object-create/">Object.create</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/animation/">animation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/animation-library/">animation library</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apply/">apply()</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bind/">bind()</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call/">call()</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/clone/">clone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/concept/">concept</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/config/">config</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/curry/">curry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/currying/">currying</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gesture/">gesture</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/library/">library</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/load/">load</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onresize/">onresize</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/performance/">performance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/picture-compression/">picture compression</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/polymorphism/">polymorphism</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/position/">position</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recursion/">recursion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scroll/">scroll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setTimeout/">setTimeout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/style/">style</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svg/">svg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tap/">tap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transform/">transform</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transition/">transition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uncurrying/">uncurrying</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Animation-performance/" style="font-size: 10px;">Animation performance</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Closures/" style="font-size: 13.33px;">Closures</a> <a href="/tags/Content-type/" style="font-size: 10px;">Content-type</a> <a href="/tags/DOMContentLoaded/" style="font-size: 10px;">DOMContentLoaded</a> <a href="/tags/JSON/" style="font-size: 16.67px;">JSON</a> <a href="/tags/Object-create/" style="font-size: 10px;">Object.create</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/animation/" style="font-size: 16.67px;">animation</a> <a href="/tags/animation-library/" style="font-size: 10px;">animation library</a> <a href="/tags/apply/" style="font-size: 13.33px;">apply()</a> <a href="/tags/bind/" style="font-size: 13.33px;">bind()</a> <a href="/tags/call/" style="font-size: 13.33px;">call()</a> <a href="/tags/clone/" style="font-size: 10px;">clone</a> <a href="/tags/concept/" style="font-size: 10px;">concept</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/curry/" style="font-size: 10px;">curry</a> <a href="/tags/currying/" style="font-size: 10px;">currying</a> <a href="/tags/function/" style="font-size: 20px;">function</a> <a href="/tags/gesture/" style="font-size: 10px;">gesture</a> <a href="/tags/library/" style="font-size: 10px;">library</a> <a href="/tags/load/" style="font-size: 10px;">load</a> <a href="/tags/onresize/" style="font-size: 10px;">onresize</a> <a href="/tags/performance/" style="font-size: 10px;">performance</a> <a href="/tags/picture-compression/" style="font-size: 10px;">picture compression</a> <a href="/tags/polymorphism/" style="font-size: 10px;">polymorphism</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/recursion/" style="font-size: 10px;">recursion</a> <a href="/tags/scroll/" style="font-size: 10px;">scroll</a> <a href="/tags/setTimeout/" style="font-size: 10px;">setTimeout</a> <a href="/tags/style/" style="font-size: 10px;">style</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tap/" style="font-size: 10px;">tap</a> <a href="/tags/transform/" style="font-size: 13.33px;">transform</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/uncurrying/" style="font-size: 10px;">uncurrying</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/10/27/JavaScript/functional programming/purity/">纯度</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/25/JavaScript/functional programming/recursion/">递归</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/24/JavaScript/functional programming/Underscore_node/">Underscore.js笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/22/JavaScript/functional programming/curry/">柯里化</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/20/JavaScript/functional programming/useful/">常用函数</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 shanyang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/1.11.0/jquery.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>递归 | 闪阳的web之旅</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="理解递归对理解函数式编程来说非常重要，原因有三
+递归的解决方案包括使用对一个普通问题子集的单一抽象的使用。
+递归可以隐藏可变状态。
+递归是一种实现懒惰和无限大结构的方法。
+
+自递归编写自递归函数时，规则如下(Touretzky, 1990)
+
+知道什么时候停止
+决定怎样算一个步骤
+把问题分解成一个步骤和一个较小的问题
+
+
+
+
+函数
+何时停止
+进行一个步骤
+小一些的问题
+
+
+
+
+myLength
+_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="递归">
+<meta property="og:url" content="http://yoursite.com/2016/10/25/JavaScript/functional programming/recursion/index.html">
+<meta property="og:site_name" content="闪阳的web之旅">
+<meta property="og:description" content="理解递归对理解函数式编程来说非常重要，原因有三
+递归的解决方案包括使用对一个普通问题子集的单一抽象的使用。
+递归可以隐藏可变状态。
+递归是一种实现懒惰和无限大结构的方法。
+
+自递归编写自递归函数时，规则如下(Touretzky, 1990)
+
+知道什么时候停止
+决定怎样算一个步骤
+把问题分解成一个步骤和一个较小的问题
+
+
+
+
+函数
+何时停止
+进行一个步骤
+小一些的问题
+
+
+
+
+myLength
+_">
+<meta property="og:updated_time" content="2016-10-25T05:17:02.446Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="递归">
+<meta name="twitter:description" content="理解递归对理解函数式编程来说非常重要，原因有三
+递归的解决方案包括使用对一个普通问题子集的单一抽象的使用。
+递归可以隐藏可变状态。
+递归是一种实现懒惰和无限大结构的方法。
+
+自递归编写自递归函数时，规则如下(Touretzky, 1990)
+
+知道什么时候停止
+决定怎样算一个步骤
+把问题分解成一个步骤和一个较小的问题
+
+
+
+
+函数
+何时停止
+进行一个步骤
+小一些的问题
+
+
+
+
+myLength
+_">
+  
+    <link rel="alternate" href="/atom.xml" title="闪阳的web之旅" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">闪阳的web之旅</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">科技并不仅限于计算机，任何可以使事情更易完成的方法都是科技。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JavaScript/functional programming/recursion" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/25/JavaScript/functional programming/recursion/" class="article-date">
+  <time datetime="2016-10-25T05:17:02.445Z" itemprop="datePublished">2016-10-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      递归
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="理解递归对理解函数式编程来说非常重要，原因有三"><a href="#理解递归对理解函数式编程来说非常重要，原因有三" class="headerlink" title="理解递归对理解函数式编程来说非常重要，原因有三"></a>理解递归对理解函数式编程来说非常重要，原因有三</h5><ul>
+<li>递归的解决方案包括使用对一个普通问题子集的单一抽象的使用。</li>
+<li>递归可以隐藏可变状态。</li>
+<li>递归是一种实现懒惰和无限大结构的方法。</li>
+</ul>
+<h5 id="自递归"><a href="#自递归" class="headerlink" title="自递归"></a>自递归</h5><p><strong>编写自递归函数时，规则如下(Touretzky, 1990)</strong></p>
+<ul>
+<li>知道什么时候停止</li>
+<li>决定怎样算一个步骤</li>
+<li>把问题分解成一个步骤和一个较小的问题</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>何时停止</th>
+<th>进行一个步骤</th>
+<th>小一些的问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>myLength</td>
+<td>_.isEmpty</td>
+<td>1 + …</td>
+<td>_.rest</td>
+</tr>
+<tr>
+<td>cycle</td>
+<td>times&lt;=0</td>
+<td>cat(ary …)</td>
+<td>times - 1</td>
+</tr>
+<tr>
+<td>unzip</td>
+<td>_.isEmpty</td>
+<td>constructPair</td>
+<td>_.rest</td>
+</tr>
+<tr>
+<td>nexts</td>
+<td>_.isEmpty</td>
+<td>construct</td>
+<td>_.rest</td>
+</tr>
+<tr>
+<td>depthSearch</td>
+<td>_.isEmpty</td>
+<td>depthSearch(more…</td>
+<td>depthSearch(cat…</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myLength</span>(<span class="params">ary</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(_.isEmpty(ary))&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span> + myLength(_.rest(ary));</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">cycle</span>(<span class="params">times,ary</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(times&lt;=<span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">return</span> [];</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> cat(ary,cycle(times<span class="number">-1</span>, ary));</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">constructPair</span>(<span class="params">pair, rests</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> [construct(_.first(pair), _.first(rests)),</div><div class="line">             construct(second(pair),second(rests))];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 抽象的拉链</span></div><div class="line"><span class="comment">// 合上的拉链 是 左右一对一 组成的集合</span></div><div class="line"><span class="comment">// 拉开的拉链 是 左边 右边 组成的集合</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">unzip</span>(<span class="params">pairs</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(_.isEmpty(pairs))&#123;</div><div class="line">        <span class="keyword">return</span> [[],[]];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> constructPair(_.first(pairs), unzip(_.rest(pairs)));</div><div class="line">&#125;</div><div class="line">unzip(_.zip([<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]))</div></pre></td></tr></table></figure>
+<p><strong>用递归遍历图</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> influences = [</div><div class="line">        [<span class="string">'Lisp'</span>,<span class="string">'Smalltalk'</span>],</div><div class="line">        [<span class="string">'Lisp'</span>,<span class="string">'Scheme'</span>],</div><div class="line">        [<span class="string">'Smalltalk'</span>,<span class="string">'Self'</span>],</div><div class="line">        [<span class="string">'Scheme'</span>,<span class="string">'JavaScript'</span>],</div><div class="line">        [<span class="string">'Scheme'</span>,<span class="string">'Lua'</span>],</div><div class="line">        [<span class="string">'Self'</span>,<span class="string">'Lua'</span>],</div><div class="line">        [<span class="string">'Self'</span>,<span class="string">'JavaScript'</span>]];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">nexts</span>(<span class="params">graph, node</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(_.isEmpty(graph)) <span class="keyword">return</span> [];</div><div class="line"></div><div class="line">    <span class="keyword">var</span> pair = _.first(graph);</div><div class="line">    <span class="keyword">var</span> <span class="keyword">from</span> = _.first(pair);</div><div class="line">    <span class="keyword">var</span> to = second(pair);</div><div class="line">    <span class="keyword">var</span> more = _.rest(graph);</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(_.isEqual(node, <span class="keyword">from</span>))&#123;</div><div class="line">        <span class="keyword">return</span> construct(to, nexts(more, node));</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> nexts(more, node);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">nexts(influences, <span class="string">'Lisp'</span>);</div><div class="line"><span class="comment">//=&gt; ["Smalltalk", "Scheme"]</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">rev</span>(<span class="params">ary</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.prototype.reverse.call(<span class="literal">null</span>, ary);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">depthSearch</span>(<span class="params">graph, nodes, seen</span>)</span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(_.isEmpty(nodes)) <span class="keyword">return</span> rev(seen);</div><div class="line"></div><div class="line">    <span class="keyword">var</span> node = _.first(nodes);</div><div class="line">    <span class="keyword">var</span> more = _.rest(nodes);</div><div class="line">    <span class="built_in">console</span>.log(node);</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(_.contains(seen, node))&#123;</div><div class="line">        <span class="keyword">return</span> depthSearch(graph, more, seen);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> depthSearch(graph,cat(nexts(graph,node),more),construct(node,seen));</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">depthSearch(influences,[<span class="string">'Lisp'</span>],[]);</div><div class="line"><span class="comment">//=&gt; ["Lisp", "Smalltalk", "Self", "Lua", "JavaScript", "Scheme"]</span></div></pre></td></tr></table></figure>
+<p><strong>尾（自）递归</strong><br>“一个步骤”和“缩小的问题”中的元素都要进行depthSearch递归调用。当对任何这些元素进行递归调用时，该函数被称为尾递归。<br>换句话说，就是函数（除了停止条件返回值）的最后一个动作是递归调用。<br>由于depthSearch的最后一次调用时一个递归调用，所以函数将永远不会再次使用。例如Scheme语言就是用这一方式来释放递归函数体重使用的资源。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">tcLength</span>(<span class="params">ary,n</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> l = n ? n :<span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(_.isEmpty(ary))</div><div class="line">            <span class="keyword">return</span> l;</div><div class="line">    <span class="keyword">else</span></div><div class="line">            <span class="keyword">return</span> tcLength(_.rest(ary), l+<span class="number">1</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>而之前的递归调用myLenght(1+…)会重复访问函数体来执行最终的加法。也许有一天，JavaScript引擎将优化尾递归函数来保持内存。<br>但现在，事实是我们被诅咒在调用堆栈上深深的递归调用中。函数的尾部位置仍然是有趣的。</p>
+</blockquote>
+<h5 id="递归和组合函数-Conjoin-和-Disjoin"><a href="#递归和组合函数-Conjoin-和-Disjoin" class="headerlink" title="递归和组合函数: Conjoin 和 Disjoin"></a>递归和组合函数: Conjoin 和 Disjoin</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">orify</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> preds = _.toArray(<span class="built_in">arguments</span>);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"><span class="comment">/* args */</span></span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> args = _.toArray(<span class="built_in">arguments</span>);</div><div class="line"></div><div class="line">        <span class="keyword">var</span> something = <span class="function"><span class="keyword">function</span> (<span class="params">ps, truth</span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span>(_.isEmpty(ps))&#123;</div><div class="line">                <span class="keyword">return</span> truth;</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                <span class="keyword">return</span> _.some(args, _.first(ps))</div><div class="line">                        &amp;&amp; something(_.rest(ps),truth);</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> something(preds, <span class="literal">false</span>);</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> evenNums = andify(_.isNumber, isEven);</div><div class="line">evenNums(<span class="number">1</span>,<span class="number">2</span>);</div><div class="line"><span class="comment">//=&gt; false</span></div><div class="line">evenNums(<span class="number">2</span>,<span class="number">4</span>);</div><div class="line"><span class="comment">//=&gt; true</span></div></pre></td></tr></table></figure>
+<h5 id="相互递归"><a href="#相互递归" class="headerlink" title="相互递归"></a>相互递归</h5><p>相互关联函数(函数调用其他会再调用回它的函数)</p>
+<p><em>简单的例子</em><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">eventSteven</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(n===<span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> oddJohn(<span class="built_in">Math</span>.abs(n) - <span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">oddJohn</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(n===<span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> eventSteven(<span class="built_in">Math</span>.abs(n) - <span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">eventSteven(<span class="number">20</span>);</div><div class="line"><span class="comment">//=&gt; true</span></div><div class="line">oddJohn(<span class="number">11</span>);</div><div class="line"><span class="comment">//=&gt; true</span></div><div class="line"></div><div class="line"><span class="comment">// _.flatten</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">flat</span>(<span class="params">array</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(_.isArray(array))&#123;</div><div class="line">        <span class="keyword">return</span> cat.apply(cat, _.map(array, flat));</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> [array];</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">flat([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]]);</div><div class="line"><span class="comment">//=&gt; [1, 2, 3, 4]</span></div></pre></td></tr></table></figure></p>
+<h5 id="使用递归深克隆"><a href="#使用递归深克隆" class="headerlink" title="使用递归深克隆"></a>使用递归深克隆</h5><p><em>浅克隆</em><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = [&#123;a: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], b: <span class="number">42</span>&#125;, &#123;c: &#123;d: []&#125;&#125;];</div><div class="line"><span class="keyword">var</span> y = _.clone(x);</div><div class="line"><span class="built_in">console</span>.log(y);</div><div class="line"><span class="comment">//=&gt; [&#123;a: [1,2,3], b: 42&#125;, &#123;c: &#123;d: []&#125;&#125;]</span></div><div class="line">x[<span class="number">1</span>][<span class="string">'c'</span>][<span class="string">'d'</span>] = <span class="number">100000</span>;</div><div class="line"><span class="built_in">console</span>.log(y);</div><div class="line"><span class="comment">//=&gt; [&#123;a: [1,2,3], b: 42&#125;, &#123;c: &#123;d: 100000&#125;&#125;]</span></div></pre></td></tr></table></figure></p>
+<p><em>深克隆</em><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(!existy(obj) || !_.isObject(obj))&#123;</div><div class="line">        <span class="keyword">return</span> obj;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> temp = <span class="keyword">new</span> obj.constructor();</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj)&#123;</div><div class="line">        <span class="keyword">if</span>(obj.hasOwnProperty(key))&#123;</div><div class="line">            temp[key] = deepClone(obj[key]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> temp;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> x = [&#123;a: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], b: <span class="number">42</span>&#125;, &#123;c: &#123;d: []&#125;&#125;];</div><div class="line"><span class="keyword">var</span> y = deepClone(x);</div><div class="line"></div><div class="line">_.isEqual(x, y);</div><div class="line"><span class="comment">//=&gt; true</span></div><div class="line"></div><div class="line">y[<span class="number">1</span>][<span class="string">'c'</span>][<span class="string">'d'</span>] = <span class="number">42</span>;</div><div class="line">_.isEqual(x, y);</div><div class="line"><span class="comment">//=&gt; false</span></div></pre></td></tr></table></figure></p>
+<p><strong>遍历嵌套数组</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">visit</span>(<span class="params">mapFun, resultFun, array</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(_.isArray(array))&#123;</div><div class="line">        <span class="keyword">return</span> resultFun(_.map(array, mapFun));</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> resultFun(array);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">visit(_.identity, _.isNumber,<span class="number">42</span>)</div><div class="line">visit(_.isNumber, _.identity,[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</div><div class="line">visit(<span class="function"><span class="keyword">function</span> (<span class="params">n</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> n*<span class="number">2</span>;</div><div class="line">&#125;, rev,[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">postDepth</span>(<span class="params">fun, ary</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> visit(partial(postDepth, fun), fun ,ary);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">preDepth</span>(<span class="params">fun, ary</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> visit(partial(postDepth, fun), fun ,fun(ary));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">influencedWithStrategy</span>(<span class="params">strategy,lang,graph</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> results = [];</div><div class="line">    strategy(<span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span>(_.isArray(x) &amp;&amp; _.first(x) === lang)</div><div class="line">                results.push(second(x));</div><div class="line">        <span class="keyword">return</span> x;</div><div class="line">    &#125;,graph);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> results;</div><div class="line">&#125;</div><div class="line">influencedWithStrategy(postDepth,<span class="string">'Lisp'</span>, influences);</div><div class="line"><span class="comment">//=&gt; ["Smalltalk", "Scheme"]</span></div><div class="line"><span class="comment">//有这个必要吗？目前还不知道</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">postDepth2</span>(<span class="params">funm,fun, ary</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> visit(partial(postDepth, funm), fun ,ary);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h5 id="太多递归了"><a href="#太多递归了" class="headerlink" title="太多递归了"></a>太多递归了</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">eventSteven(<span class="number">100000</span>)</div><div class="line"><span class="comment">//=&gt; Uncaught RangeError: Maximum call stack size exceeded</span></div></pre></td></tr></table></figure>
+<p><strong>蹦床</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">evenOline</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(n === <span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> partial(oddOline, <span class="built_in">Math</span>.abs(n) - <span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">oddOline</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(n === <span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> partial(evenOline, <span class="built_in">Math</span>.abs(n) - <span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">evenOline(<span class="number">0</span>)</div><div class="line"><span class="comment">//=&gt; true</span></div><div class="line">oddOline(<span class="number">0</span>)</div><div class="line"><span class="comment">//=&gt; false</span></div><div class="line">oddOline(<span class="number">3</span>)()()();</div><div class="line"><span class="comment">//=&gt; true</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">trampoline</span>(<span class="params">fun <span class="comment">/*, args */</span></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> result = fun.apply(fun, _.rest(<span class="built_in">arguments</span>));</div><div class="line"></div><div class="line">    <span class="keyword">while</span>(_.isFunction(result))&#123;</div><div class="line">        result = result();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isEvenSafe</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(n === <span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> trampoline(partial(oddOline, <span class="built_in">Math</span>.abs(n) - <span class="number">1</span>));</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isOddSafe</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(n === <span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> trampoline(partial(evenOline, <span class="built_in">Math</span>.abs(n) - <span class="number">1</span>));</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">trampoline(oddOline,<span class="number">3</span>);</div><div class="line"><span class="comment">//=&gt; true</span></div><div class="line">trampoline(evenOline,<span class="number">200000</span>);</div><div class="line"><span class="comment">//=&gt; true</span></div><div class="line">trampoline(oddOline,<span class="number">300000</span>);</div><div class="line"><span class="comment">//=&gt; false</span></div><div class="line"><span class="comment">//trampoline(evenOline,200000000);</span></div><div class="line"><span class="comment">//=&gt; true</span></div><div class="line"></div><div class="line">isEvenSafe(<span class="number">100</span>)</div><div class="line"><span class="comment">//=&gt; true</span></div><div class="line"></div><div class="line">isOddSafe(<span class="number">100</span>)</div><div class="line"><span class="comment">//=&gt; false</span></div></pre></td></tr></table></figure>
+<h5 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h5><p>因为堆比调用栈大得多，所以你使用蹦床时不太可能碰到内存耗尽的问题。<br>如果不直接使用蹦床，一般的“蹦床化(trampolineness)”的思想在JavaScript中其实一文不值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">generator</span>(<span class="params">seed, current, step</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        head: current(seed),</div><div class="line">        tail: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">"forced"</span>);</div><div class="line">            <span class="keyword">return</span> generator(step(seed), current, step);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">genHead</span>(<span class="params">gen</span>)</span>&#123; <span class="keyword">return</span> gen.head &#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">genTail</span>(<span class="params">gen</span>)</span>&#123; <span class="keyword">return</span> gen.tail() &#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> ints = generator(<span class="number">0</span>, _.identity,<span class="function"><span class="keyword">function</span> (<span class="params">n</span>)</span>&#123; <span class="keyword">return</span> n+<span class="number">1</span>&#125;);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">genTake</span>(<span class="params">n, gen</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> doTake = <span class="function"><span class="keyword">function</span>(<span class="params">x,g,ret</span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(x === <span class="number">0</span>)</div><div class="line">                <span class="keyword">return</span> ret;</div><div class="line">        <span class="keyword">else</span></div><div class="line">                <span class="keyword">return</span> partial(doTake, x<span class="number">-1</span>, genTail(g), cat(ret, genHead(g)));</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> trampoline(doTake, n, gen, []);</div><div class="line">&#125;</div><div class="line">genTake(<span class="number">10</span>, ints);</div><div class="line"><span class="comment">//=&gt; forced*10</span></div><div class="line"><span class="comment">//=&gt; [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span></div></pre></td></tr></table></figure>
+<p><strong>蹦床原理以及回调</strong></p>
+<p>使用时间循环可以使JavaScript应用程序获得最大的效率</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">asyncGetAny</span>(<span class="params">interval, urls, onsuccess, onfailure</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> n = urls.length;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> looper = <span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</div><div class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">if</span>(i &gt;= n)&#123;</div><div class="line">                onfailure(<span class="string">"failed"</span>);</div><div class="line">                <span class="keyword">return</span>;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            $.get(urls[i],onsuccess)</div><div class="line">                    .always(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                        <span class="built_in">console</span>.log(<span class="string">"try:"</span> + urls[i]);</div><div class="line">                    &#125;)</div><div class="line">                    .fail(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                        looper(i+<span class="number">1</span>);</div><div class="line">                    &#125;)</div><div class="line">        &#125;, interval);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    looper(<span class="number">0</span>);</div><div class="line">    <span class="keyword">return</span> <span class="string">"go"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> urls = [<span class="string">'p1.html'</span>,<span class="string">'pp2.html'</span>,<span class="string">'pp3.html'</span>,<span class="string">'pp4.html'</span>];</div><div class="line">asyncGetAny(<span class="number">2000</span>,urls,<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123; alert(<span class="string">"Got  some data"</span>)&#125;,<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"all failed"</span>);</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//GET http://127.0.0.1:8080/pp1.html 404 (Not Found)send @ jquery.js:9536ajax @ jquery.js:9143jQuery.(anonymous function) @ jquery.js:9292(anonymous function) @ a2.html:35</span></div><div class="line"><span class="comment">//try:pp1.html</span></div><div class="line"><span class="comment">//http://127.0.0.1:8080/pp2.html 404 (Not Found)send @ jquery.js:9536ajax @ jquery.js:9143jQuery.(anonymous function) @ jquery.js:9292(anonymous function) @ a2.html:35</span></div><div class="line"><span class="comment">//try:pp2.html</span></div><div class="line"><span class="comment">//GET http://127.0.0.1:8080/pp3.html 404 (Not Found)send @ jquery.js:9536ajax @ jquery.js:9143jQuery.(anonymous function) @ jquery.js:9292(anonymous function) @ a2.html:35</span></div><div class="line"><span class="comment">//try:pp3.html</span></div><div class="line"><span class="comment">//GET http://127.0.0.1:8080/pp4.html 404 (Not Found)send @ jquery.js:9536ajax @ jquery.js:9143jQuery.(anonymous function) @ jquery.js:9292(anonymous function) @ a2.html:35</span></div><div class="line"><span class="comment">//try:pp4.html</span></div><div class="line"><span class="comment">//all failed</span></div></pre></td></tr></table></figure>
+<h5 id="递归是一个底层操作"><a href="#递归是一个底层操作" class="headerlink" title="递归是一个底层操作"></a>递归是一个底层操作</h5><p>这样influences的实现不仅减少了代码量，而且概念也是非常容易理解的。<br>我已经知道<em>.groupBy、</em>.first、second和_.map的用法，所以要了解<br>influenced是了解数据在函数间是如何转换的。这就是函数式编程的一大优势所在，如同乐高积木，数据流在函数管道中不断转换成最终需要的数据形式。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> groupFrom = curry2(_.groupBy)(_.first);</div><div class="line"><span class="keyword">var</span> groupTo = curry3(_.groupBy)(second);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">influenced</span>(<span class="params">graph, node</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> _.map(groupFrom(graph)[node],second);</div><div class="line">&#125;</div><div class="line"><span class="comment">//效果和之前实现的是一样的</span></div><div class="line">influencedWithStrategy(postDepth,<span class="string">'lisp'</span>,influences)</div></pre></td></tr></table></figure></p>
+<p>首先使用函数组合，仅当需要时才使用递归和蹦床。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/25/JavaScript/functional programming/recursion/" data-id="ciunhs5j30000e0ni81qfx6w3" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function/">function</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/recursion/">recursion</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/10/27/JavaScript/functional programming/purity/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          纯度
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/24/JavaScript/functional programming/Underscore_node/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">Underscore.js笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categorieën</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Underscore/">Underscore</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/animation/">animation</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/events/">events</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/events/HTML-DOM-events/">HTML DOM events</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mobile/">mobile</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/svg/">svg</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Labels</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Animation-performance/">Animation performance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Array/">Array</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Closures/">Closures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Content-type/">Content-type</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOMContentLoaded/">DOMContentLoaded</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Object-create/">Object.create</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/animation/">animation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/animation-library/">animation library</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apply/">apply()</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bind/">bind()</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call/">call()</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/clone/">clone</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/concept/">concept</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/config/">config</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/curry/">curry</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/currying/">currying</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gesture/">gesture</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/library/">library</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/load/">load</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onresize/">onresize</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/performance/">performance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/picture-compression/">picture compression</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/polymorphism/">polymorphism</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/position/">position</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recursion/">recursion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scroll/">scroll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setTimeout/">setTimeout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/style/">style</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svg/">svg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tap/">tap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transform/">transform</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transition/">transition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/uncurrying/">uncurrying</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Animation-performance/" style="font-size: 10px;">Animation performance</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Closures/" style="font-size: 13.33px;">Closures</a> <a href="/tags/Content-type/" style="font-size: 10px;">Content-type</a> <a href="/tags/DOMContentLoaded/" style="font-size: 10px;">DOMContentLoaded</a> <a href="/tags/JSON/" style="font-size: 16.67px;">JSON</a> <a href="/tags/Object-create/" style="font-size: 10px;">Object.create</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/animation/" style="font-size: 16.67px;">animation</a> <a href="/tags/animation-library/" style="font-size: 10px;">animation library</a> <a href="/tags/apply/" style="font-size: 13.33px;">apply()</a> <a href="/tags/bind/" style="font-size: 13.33px;">bind()</a> <a href="/tags/call/" style="font-size: 13.33px;">call()</a> <a href="/tags/clone/" style="font-size: 10px;">clone</a> <a href="/tags/concept/" style="font-size: 10px;">concept</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/curry/" style="font-size: 10px;">curry</a> <a href="/tags/currying/" style="font-size: 10px;">currying</a> <a href="/tags/function/" style="font-size: 20px;">function</a> <a href="/tags/gesture/" style="font-size: 10px;">gesture</a> <a href="/tags/library/" style="font-size: 10px;">library</a> <a href="/tags/load/" style="font-size: 10px;">load</a> <a href="/tags/onresize/" style="font-size: 10px;">onresize</a> <a href="/tags/performance/" style="font-size: 10px;">performance</a> <a href="/tags/picture-compression/" style="font-size: 10px;">picture compression</a> <a href="/tags/polymorphism/" style="font-size: 10px;">polymorphism</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/recursion/" style="font-size: 10px;">recursion</a> <a href="/tags/scroll/" style="font-size: 10px;">scroll</a> <a href="/tags/setTimeout/" style="font-size: 10px;">setTimeout</a> <a href="/tags/style/" style="font-size: 10px;">style</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tap/" style="font-size: 10px;">tap</a> <a href="/tags/transform/" style="font-size: 13.33px;">transform</a> <a href="/tags/transition/" style="font-size: 10px;">transition</a> <a href="/tags/uncurrying/" style="font-size: 10px;">uncurrying</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/10/27/JavaScript/functional programming/purity/">纯度</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/25/JavaScript/functional programming/recursion/">递归</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/24/JavaScript/functional programming/Underscore_node/">Underscore.js笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/22/JavaScript/functional programming/curry/">柯里化</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/20/JavaScript/functional programming/useful/">常用函数</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 shanyang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/1.11.0/jquery.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
